@@ -1,5 +1,4 @@
-#square {
-  background-color: black;
-  width: 100px;
-  height: 100px;
-}
+@import "reset.css";
+@import "layout.css";
+@import "adaptive.css";
+@import "animation.css";

@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+}
+body {
+  background-color: #cf3711;
+  width: 100%;
+}
+.first {
+  position: relative;
+  background-image: url("../images/nebo1.svg");
+  width: 100vw;
+  height: 56.25vw;
+  display: flex;
+}
+.texture1,
+.texture2 {
+  position: absolute;
+  width: 100vw;
+  height: 56.25vw;
+}
+.texture1 {
+  position: relative;
+  background-image: url("../images/texture1.svg");
+  mix-blend-mode: color-burn;
+}
+.texture2 {
+  position: relative;
+  background-image: url("../images/texture2.svg");
+  mix-blend-mode: soft-light;
+}
+.domday {
+  position: absolute;
+  background-image: url("../images/dom.svg");
+  background-size: contain;
+  width: 100%;
+  height: 56.25vw;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
