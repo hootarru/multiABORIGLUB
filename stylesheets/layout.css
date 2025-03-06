@@ -5,28 +5,14 @@ body {
   background-color: #cf3711;
   width: 100%;
 }
-.first {
+.DAYONE {
   position: relative;
   background-image: url("../images/nebo1.svg");
   width: 100vw;
   height: 56.25vw;
-  display: flex;
-}
-.texture1,
-.texture2 {
-  position: absolute;
-  width: 100vw;
-  height: 56.25vw;
-}
-.texture1 {
-  position: relative;
-  background-image: url("../images/texture1.svg");
-  mix-blend-mode: color-burn;
-}
-.texture2 {
-  position: relative;
-  background-image: url("../images/texture2.svg");
-  mix-blend-mode: soft-light;
+  /* display: flex;
+  align-items: flex-end;
+  justify-content: start; */
 }
 .domday {
   position: absolute;
@@ -34,7 +20,96 @@ body {
   background-size: contain;
   width: 100%;
   height: 56.25vw;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
+  z-index: 2;
+  filter: saturate(105%);
 }
+.sun {
+  position: absolute;
+  background-image: url("../images/sun.svg");
+  background-size: cover;
+  width: 30vw;
+  height: 27.7vw;
+  z-index: 1;
+  filter: saturate(105%);
+}
+.texture1,
+.texture2 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.texture1 {
+  background-image: url("../images/texture1.svg");
+  background-size: cover;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  z-index: 5;
+}
+.texture2 {
+  background-image: url("../images/texture2.svg");
+  background-size: cover;
+  mix-blend-mode: color-burn;
+  pointer-events: none;
+  z-index: 6;
+}
+.NIGHTONE {
+  position: relative;
+  background-image: url("../images/nebo2.svg");
+  width: 100vw;
+  height: 56.25vw;
+}
+.domnight {
+  position: absolute;
+  background-image: url("../images/dom2.svg");
+  background-size: contain;
+  width: 100%;
+  height: 56.25vw;
+  z-index: 2;
+}
+.moon {
+  position: absolute;
+  background-image: url("../images/moon.svg");
+  background-size: cover;
+  width: 30vw;
+  height: 27.7vw;
+  z-index: 1;
+  filter: saturate(105%);
+}
+.texture1another,
+.texture2another {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.texture1another {
+  background-image: url("../images/texture1.svg");
+  background-size: cover;
+  mix-blend-mode: multiply;
+  pointer-events: none;
+  z-index: 5;
+}
+.texture2another {
+  background-image: url("../images/texture2.svg");
+  background-size: cover;
+  mix-blend-mode: color-burn;
+  pointer-events: none;
+  z-index: 6;
+  opacity: 60%;
+}
+/* .SMENA {
+  animation: SMENS 5s ease-in-out infinite;
+}
+@keyframes SMENS {
+  0%,
+  50% {
+    opacity: 1; /* Fully visible */
+  }
+  50%,
+  100% {
+    opacity: 0; /* Fully hidden */
+  }
+} */
