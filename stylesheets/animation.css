@@ -91,3 +91,51 @@
     transform: rotate(450deg) translateX(55vw);
   }
 }
+.girl1 {
+  animation-name: girl_dvizh;
+  animation-duration: 2s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+@keyframes girl_dvizh {
+  from {
+    top: 11vw;
+  }
+  to {
+    top: 11.5vw;
+  }
+}
+.frog1 {
+  animation-name: frog1_dvizh;
+  animation-duration: 0.7s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  cursor: pointer;
+}
+@keyframes frog1_dvizh {
+  from {
+    top: 16vw;
+  }
+  to {
+    top: 16.5vw;
+  }
+}
+.frog_red1 {
+  animation-name: frog_red_dvizh;
+  animation-duration: 0.7s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  cursor: pointer;
+}
+
+@keyframes frog_red_dvizh {
+  from {
+    top: 14.2vw;
+  }
+  to {
+    top: 14.7vw;
+  }
+}
