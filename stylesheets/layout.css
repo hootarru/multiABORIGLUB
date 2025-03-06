@@ -5,14 +5,24 @@ body {
   background-color: #cf3711;
   width: 100%;
 }
-.DAYONE {
+.SMENA {
   position: relative;
+  width: 100vw;
+  height: 56.25vw;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.DAYONE {
+  position: absolute;
   background-image: url("../images/nebo1.svg");
   width: 100vw;
   height: 56.25vw;
-  /* display: flex;
-  align-items: flex-end;
-  justify-content: start; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* overflow: hidden; */
 }
 .domday {
   position: absolute;
@@ -30,7 +40,7 @@ body {
   width: 30vw;
   height: 27.7vw;
   z-index: 1;
-  filter: saturate(105%);
+  margin-block-start: 20vw;
 }
 .texture1,
 .texture2 {
@@ -54,12 +64,18 @@ body {
   pointer-events: none;
   z-index: 6;
 }
+
 .NIGHTONE {
-  position: relative;
+  position: absolute;
   background-image: url("../images/nebo2.svg");
   width: 100vw;
   height: 56.25vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
 }
+
 .domnight {
   position: absolute;
   background-image: url("../images/dom2.svg");
@@ -67,15 +83,19 @@ body {
   width: 100%;
   height: 56.25vw;
   z-index: 2;
+  /* overflow: hidden; */
 }
 .moon {
   position: absolute;
-  background-image: url("../images/moon.svg");
+  /* margin-left: -0.5vw; */
+  background-image: url("../images/moon_zamena.svg");
+
   background-size: cover;
   width: 30vw;
   height: 27.7vw;
   z-index: 1;
   filter: saturate(105%);
+  margin-block-start: 20vw;
 }
 .texture1another,
 .texture2another {
@@ -100,16 +120,3 @@ body {
   z-index: 6;
   opacity: 60%;
 }
-/* .SMENA {
-  animation: SMENS 5s ease-in-out infinite;
-}
-@keyframes SMENS {
-  0%,
-  50% {
-    opacity: 1; /* Fully visible */
-  }
-  50%,
-  100% {
-    opacity: 0; /* Fully hidden */
-  }
-} */

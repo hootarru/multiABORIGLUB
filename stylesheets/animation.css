@@ -1,0 +1,83 @@
+.domnight {
+  animation-name: dom_smena;
+  animation-duration: 5s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+}
+@keyframes dom_smena {
+  0% {
+    opacity: 0;
+    filter: saturate(100%);
+  }
+  100% {
+    opacity: 1;
+    filter: saturate(110%);
+  }
+}
+.textures {
+  animation-name: textures_smena;
+  animation-duration: 18s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+@keyframes textures_smena {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.1;
+  }
+}
+.NIGHTONE {
+  animation-name: nebo_smena;
+  animation-duration: 5s;
+  animation-timing-function: 10s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+@keyframes nebo_smena {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.moon {
+  animation: moon_smena 19s linear infinite,
+    opaopa 10s cubic-bezier(0.001, 0.4, 0.795, 0.1) alternate-reverse infinite;
+}
+@keyframes moon_smena {
+  0% {
+    transform: rotate(450deg) translateX(30vw) rotate(0deg);
+  }
+  50% {
+    transform: rotate(90deg) translateX(55vw) rotate(0deg);
+  }
+}
+
+/* @keyframes opaopa {
+  0% {
+    opacity: 100%;
+  }
+  100% {
+    opacity: 0;
+  }
+} */
+.sun {
+  animation-name: sun_smena;
+  animation-duration: 19s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+@keyframes sun_smena {
+  0% {
+    transform: rotate(90deg) translateX(30vw) rotate(0deg);
+  }
+  50% {
+    transform: rotate(450deg) translateX(55vw) rotate(1710deg);
+  }
+}
