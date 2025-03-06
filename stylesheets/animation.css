@@ -47,7 +47,7 @@
 }
 .moon {
   animation: moon_smena 19s linear infinite,
-    opaopa 3s linear alternate-reverse infinite;
+    brightness 15s ease-in alternate-reverse infinite;
 }
 @keyframes moon_smena {
   0% {
@@ -59,7 +59,25 @@
     opacity: 0%;
   }
 }
-
+@keyframes brightness {
+  0% {
+    opacity: 1;
+  }
+  54% {
+    filter: none;
+  }
+  58% {
+    opacity: 1;
+  }
+  59.99999% {
+    filter: brightness(2);
+    z-index: 1;
+  }
+  60% {
+    opacity: 0;
+    z-index: -1;
+  }
+}
 .sun {
   animation-name: sun_smena;
   animation-duration: 19s;
