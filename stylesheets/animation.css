@@ -46,22 +46,20 @@
   }
 }
 .moon {
-  animation: moon_smena 19s linear infinite,
+  animation: moon_smena 20s linear infinite,
     brightness 15s ease-in alternate-reverse infinite;
 }
 @keyframes moon_smena {
   0% {
     transform: rotate(90deg) translateX(30vw);
-    opacity: 100%;
   }
   50% {
     transform: rotate(450deg) translateX(55vw);
-    opacity: 0%;
   }
 }
 @keyframes brightness {
   0% {
-    opacity: 1;
+    opacity: 0;
   }
   54% {
     filter: none;
@@ -70,7 +68,7 @@
     opacity: 1;
   }
   59.99999% {
-    filter: brightness(2);
+    filter: brightness(1.5);
     z-index: 1;
   }
   60% {
@@ -80,7 +78,7 @@
 }
 .sun {
   animation-name: sun_smena;
-  animation-duration: 19s;
+  animation-duration: 20s;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
   animation-direction: alternate;

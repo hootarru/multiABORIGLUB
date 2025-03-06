@@ -87,12 +87,13 @@ body {
 }
 .moon {
   position: absolute;
-  /* margin-left: -0.5vw; */
+  margin-left: -0.8vw;
+  margin-top: 2vw;
   background-image: url("../images/moon_zamena.svg");
 
   background-size: cover;
-  width: 37vw;
-  height: 34.7vw;
+  width: 30vw;
+  height: 27.7vw;
   z-index: 1;
   filter: saturate(105%);
   margin-block-start: 20vw;
