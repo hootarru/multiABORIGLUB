@@ -97,7 +97,9 @@
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
   animation-direction: alternate;
+  /* cursor: not-allowed; */
 }
+
 @keyframes girl_dvizh {
   from {
     top: 11vw;
@@ -106,6 +108,9 @@
     top: 11.5vw;
   }
 }
+/* .girl1:hover {
+  filter: brightness(110%);
+} */
 .frog1 {
   animation-name: frog1_dvizh;
   animation-duration: 0.7s;
@@ -128,14 +133,16 @@
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
   animation-direction: alternate;
-  cursor: pointer;
+  /* cursor: pointer; */
 }
 
 @keyframes frog_red_dvizh {
   from {
     top: 14.2vw;
+    opacity: 90%;
   }
   to {
     top: 14.7vw;
+    opacity: 30%;
   }
 }
