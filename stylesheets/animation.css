@@ -146,3 +146,37 @@
     opacity: 30%;
   }
 }
+.plakat {
+  animation-name: plakat_dvizh;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  cursor: pointer;
+}
+@keyframes plakat_dvizh {
+  from {
+    top: 12vw;
+    fill: none;
+  }
+  to {
+    top: 12.8vw;
+    /* filter: saturate(70); */
+  }
+}
+.frog_2 {
+  animation-name: frog2_dvizh_2;
+  animation-duration: 0.7s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes frog2_dvizh_2 {
+  from {
+    opacity: 100%;
+  }
+  to {
+    opacity: 0%;
+  }
+}

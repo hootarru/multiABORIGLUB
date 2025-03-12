@@ -50,6 +50,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
+  overflow: hidden;
 }
 .texture1 {
   background-image: url("../images/texture1.svg");
@@ -106,6 +107,7 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
+  overflow: hidden;
 }
 .texture1another {
   background-image: url("../images/texture1.svg");
@@ -137,7 +139,7 @@ body {
   background-size: cover;
   width: 11.2vw;
   height: 29vw;
-  z-index: 5;
+  z-index: 4;
   margin-right: 17vw;
 }
 .frog1 {
@@ -146,7 +148,7 @@ body {
   background-size: cover;
   width: 16vw;
   height: 29vw;
-  z-index: 5;
+  z-index: 4;
   margin-left: 5.5vw;
   top: 16.2vw;
 }
@@ -156,7 +158,128 @@ body {
   background-size: cover;
   width: 17.9vw;
   height: 31.6vw;
-  z-index: 5;
+  z-index: 4;
   margin-left: 5.1vw;
   top: 14.2vw;
+}
+.frog_red1_smena {
+  display: none;
+  position: absolute;
+  background-image: url("../images/frog_red2.svg");
+  background-size: cover;
+  width: 24vw;
+  height: 34vw;
+  z-index: 4;
+  margin-left: 3vw;
+  top: 14vw;
+}
+
+.replica_1_1 {
+  position: absolute;
+  background-image: url("../images/replica_1_1.svg");
+  background-size: cover;
+  width: 38.5vw;
+  height: 21.7vw;
+  z-index: 4;
+  margin-left: 13vw;
+  top: -4vw;
+  display: none;
+}
+.replica_1_2 {
+  position: absolute;
+  background-image: url("../images/replica_1_2.svg");
+  background-size: cover;
+  width: 28vw;
+  height: 13.7vw;
+  z-index: 4;
+  margin-left: -39vw;
+  top: 5vw;
+  display: none;
+}
+.EKRAN2 {
+  position: relative;
+  width: 100vw;
+  height: 56.25vw;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.PERSPECTIVE_DIALOG {
+  position: absolute;
+  background-image: url("../images/ekran2_ZAMENA.svg");
+  background-size: cover;
+  width: 100vw;
+  height: 56.25vw;
+  /* display: flex; */
+  /* align-items: center;
+  justify-content: center;
+  overflow: hidden; */
+  z-index: 1;
+}
+.frogs_container {
+  position: relative;
+  width: 77vw;
+  height: 57vw;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 11.5vw;
+  left: 33.3vw;
+
+  /* opacity: 30%; */
+}
+.frog_2 {
+  position: absolute;
+  background-image: url("../images/ekran2_frog_red.svg");
+  background-size: cover;
+  width: 51vw;
+  height: 35vw;
+  z-index: 4;
+}
+.frog_red2 {
+  position: absolute;
+  background-image: url("../images/ekran2_frog_usual.svg");
+  background-size: cover;
+  width: 48vw;
+  height: 35vw;
+  z-index: 5;
+  cursor: pointer;
+}
+/* .ekran2_frog_usual.svg img {
+  cursor: pointer;
+  object-fit: cover;
+} */
+.plakat {
+  position: absolute;
+  background-image: url("../images/plakatik.svg");
+  background-size: cover;
+  width: 18.5vw;
+  height: 28.6vw;
+  z-index: 4;
+  top: 12vw;
+  left: 0vw;
+}
+.replica_2_1 {
+  position: absolute;
+  background-image: url("../images/replica_2_1.svg");
+  background-size: cover;
+  width: 46vw;
+  height: 27vw;
+  z-index: 4;
+  margin-left: 53vw;
+  top: -1.2vw;
+  display: none;
+}
+.replica_2_2 {
+  position: absolute;
+  background-image: url("../images/replica_2_2.svg");
+  background-size: cover;
+  width: 44.2vw;
+  height: 12.3vw;
+  z-index: 4;
+  margin-left: -22vw;
+  top: 42vw;
+  display: none;
 }
