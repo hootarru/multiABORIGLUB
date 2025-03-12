@@ -1,4 +1,23 @@
 // // console.log("privet");
+document.addEventListener("DOMContentLoaded", () => {
+  navigation();
+});
+
+function navigation() {
+  let screen1 = document.querySelector(".hz");
+  let screen2 = document.querySelector(".EKRAN2");
+  let dalee1to2 = document.querySelector(".hz .dalee");
+  let obratno2to1 = document.querySelector(".EKRAN2 .obratno");
+
+  dalee1to2.addEventListener("click", () => {
+    screen1.classList.add("none");
+    screen2.classList.remove("none");
+  });
+  obratno2to1.addEventListener("click", () => {
+    screen1.classList.remove("none");
+    screen2.classList.add("none");
+  });
+}
 
 document.addEventListener("DOMContentLoaded", () => {
   const frogContainer = document.getElementById("frog-container");

@@ -328,21 +328,26 @@ body {
 }
 .obratno {
   position: absolute;
-  width: 13vw;
-  height: 6.8vw;
+  width: 11.5vw;
+  height: 6vw;
   background-image: url("../images/obratno_button.svg");
   background-size: cover;
-  left: 2vw;
+  left: 3vw;
   z-index: 200;
-  margin-top: 20.7vw;
+  margin-top: 20vw;
+  cursor: pointer;
 }
 .dalee {
   position: absolute;
-  width: 13.3vw;
-  height: 8vw;
+  width: 11.5vw;
+  height: 7vw;
   background-image: url("../images/dalee_button.svg");
   background-size: cover;
   z-index: 200;
-  left: 83vw;
-  margin-top: 19.5vw;
+  left: 84.5vw;
+  margin-top: 19vw;
+  cursor: pointer;
+}
+.none {
+  display: none;
 }
