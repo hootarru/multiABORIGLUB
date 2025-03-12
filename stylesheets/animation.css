@@ -146,6 +146,28 @@
     opacity: 30%;
   }
 }
+
+.frog_red1_smena {
+  animation-name: frog_red1_smenaa;
+  animation-duration: 0.4s;
+  animation-timing-function: ease-in-out;
+
+  animation-direction: alternate;
+
+  /* cursor: pointer; */
+}
+@keyframes frog_red1_smenaa {
+  from {
+    opacity: 0%;
+
+    /* top: 15vw; */
+  }
+  to {
+    opacity: 100%;
+
+    /* top: 16.3vw; */
+  }
+}
 .plakat {
   animation-name: plakat_dvizh;
   animation-duration: 1s;
@@ -178,5 +200,35 @@
   }
   to {
     opacity: 0%;
+  }
+}
+.replica_1_1 {
+  animation-name: REPLIC1;
+  animation-timing-function: ease-in-out;
+  animation-duration: 1s;
+}
+@keyframes REPLIC1 {
+  from {
+    opacity: 0%;
+    top: -4vw;
+    margin-left: 14.8vw;
+  }
+  to {
+    opacity: 100%;
+    top: -5vw;
+    margin-left: 15.4vw;
+  }
+}
+.replica_1_2 {
+  animation-name: REPLIC2;
+  animation-timing-function: ease-in-out;
+  animation-duration: 1s;
+}
+@keyframes REPLIC2 {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
   }
 }

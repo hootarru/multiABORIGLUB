@@ -57,14 +57,14 @@ body {
   background-size: cover;
   mix-blend-mode: multiply;
   pointer-events: none;
-  z-index: 5;
+  z-index: 6;
 }
 .texture2 {
   background-image: url("../images/texture2.svg");
   background-size: cover;
   mix-blend-mode: color-burn;
   pointer-events: none;
-  z-index: 6;
+  z-index: 7;
 }
 
 .NIGHTONE {
@@ -141,7 +141,9 @@ body {
   height: 29vw;
   z-index: 4;
   margin-right: 17vw;
+  cursor: progress;
 }
+
 .frog1 {
   position: absolute;
   background-image: url("../images/frog_usual1.svg");
@@ -163,15 +165,15 @@ body {
   top: 14.2vw;
 }
 .frog_red1_smena {
-  display: none;
+  /* display: none; */
   position: absolute;
   background-image: url("../images/frog_red2.svg");
   background-size: cover;
   width: 24vw;
   height: 34vw;
-  z-index: 4;
-  margin-left: 3vw;
-  top: 14vw;
+  z-index: 3;
+  margin-left: 6.3vw;
+  top: 16vw;
 }
 
 .replica_1_1 {
@@ -181,9 +183,10 @@ body {
   width: 38.5vw;
   height: 21.7vw;
   z-index: 4;
-  margin-left: 13vw;
-  top: -4vw;
-  display: none;
+  margin-left: 15.4vw;
+  top: -5vw;
+
+  /* display: none; */
 }
 .replica_1_2 {
   position: absolute;
@@ -194,7 +197,7 @@ body {
   z-index: 4;
   margin-left: -39vw;
   top: 5vw;
-  display: none;
+  /* display: none; */
 }
 .EKRAN2 {
   position: relative;
@@ -282,4 +285,64 @@ body {
   margin-left: -22vw;
   top: 42vw;
   display: none;
+}
+.frog-container {
+  margin-top: 20px;
+  cursor: pointer;
+  position: absolute;
+  background-image: url("../images/frog_red1.svg");
+  background-size: cover;
+}
+
+#frog-image {
+  width: 150px;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+#frog-image:hover {
+  transform: scale(1.1);
+}
+
+#frog-quote {
+  margin-top: 20px;
+  font-size: 20px;
+  color: #2e7d32;
+  font-weight: bold;
+}
+
+.hidden {
+  display: none;
+}
+.BUTTONS {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-self: flex-end;
+  box-sizing: border-box;
+  z-index: 200;
+  /* margin-top: -20vw; */
+  /* left: -20vw; */
+}
+.obratno {
+  position: absolute;
+  width: 13vw;
+  height: 6.8vw;
+  background-image: url("../images/obratno_button.svg");
+  background-size: cover;
+  left: 2vw;
+  z-index: 200;
+  margin-top: 20.7vw;
+}
+.dalee {
+  position: absolute;
+  width: 13.3vw;
+  height: 8vw;
+  background-image: url("../images/dalee_button.svg");
+  background-size: cover;
+  z-index: 200;
+  left: 83vw;
+  margin-top: 19.5vw;
 }
