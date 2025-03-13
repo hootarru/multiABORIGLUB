@@ -3,55 +3,64 @@ document.addEventListener("DOMContentLoaded", () => {
   navigation();
 });
 
-// function navigation() {
-//   let screen1 = document.querySelector(".EKRAN1");
-//   let screen2 = document.querySelector(".EKRAN2");
-//   let screen3 = document.querySelector(".EKRAN3");
-//   let screen4 = document.querySelector(".EKRAN4");
-//   let screen5 = document.querySelector(".EKRAN5");
+function navigation() {
+  let screen1 = document.querySelector(".EKRAN1");
+  let screen2 = document.querySelector(".EKRAN2");
+  let screen3 = document.querySelector(".EKRAN3");
+  let screen4 = document.querySelector(".EKRAN4");
+  let screen5 = document.querySelector(".EKRAN5");
 
-//   let dalee1to2 = document.querySelector(".EKRAN1 .dalee");
-//   let obratno2to1 = document.querySelector(".EKRAN2 .obratno");
-//   let dalee2to3 = document.querySelector(".EKRAN2 .dalee");
-//   let obratno3to2 = document.querySelector(".EKRAN3 .obratno");
-//   let dalee3to4 = document.querySelector(".EKRAN3 .dalee");
-//   let obratno4to3 = document.querySelector(".EKRAN4 .obratno");
-//   let dalee4to5 = document.querySelector(".EKRAN4 .dalee");
-//   let obratno5to4 = document.querySelector(".EKRAN5 .obratno");
+  let dalee1to2 = document.querySelector(".EKRAN1 .dalee");
+  let obratno2to1 = document.querySelector(".EKRAN2 .obratno");
+  let dalee2to3 = document.querySelector(".EKRAN2 .dalee");
+  let obratno3to2 = document.querySelector(".EKRAN3 .obratno");
+  let dalee3to4 = document.querySelector(".EKRAN3 .dalee");
+  let obratno4to3 = document.querySelector(".EKRAN4 .obratno");
+  let dalee4to5 = document.querySelector(".EKRAN4 .dalee");
+  let obratno5to4 = document.querySelector(".EKRAN5 .obratno");
 
-//   dalee1to2.addEventListener("click", () => {
-//     screen1.classList.add("none");
-//     screen2.classList.remove("none");
-//   });
-//   obratno2to1.addEventListener("click", () => {
-//     screen1.classList.remove("none");
-//     screen2.classList.add("none");
-//   });
-//   dalee2to3.addEventListener("click", () => {
-//     screen2.classList.add("none");
-//     screen3.classList.remove("none");
-//   });
-//   obratno3to2.addEventListener("click", () => {
-//     screen3.classList.add("none");
-//     screen2.classList.remove("none");
-//   });
-//   dalee3to4.addEventListener("click", () => {
-//     screen3.classList.add("none");
-//     screen4.classList.remove("none");
-//   });
-//   obratno4to3.addEventListener("click", () => {
-//     screen4.classList.add("none");
-//     screen3.classList.remove("none");
-//   });
-//   dalee4to5.addEventListener("click", () => {
-//     screen4.classList.add("none");
-//     screen5.classList.remove("none");
-//   });
-//   obratno5to4.addEventListener("click", () => {
-//     screen5.classList.add("none");
-//     screen4.classList.remove("none");
-//   });
-// }
+  dalee1to2.addEventListener("click", () => {
+    screen1.classList.add("none");
+    screen2.classList.remove("none");
+  });
+  obratno2to1.addEventListener("click", () => {
+    screen1.classList.remove("none");
+    screen2.classList.add("none");
+  });
+  dalee2to3.addEventListener("click", () => {
+    // alert(
+    //   "вО-ПЕРВЫХ, СЛЕДИ ЗА РТОМ ПЕРЕД ПОХОДОМ В АБОРИГЛАБ !!!!!!!!!!!!!!!!!!!!!!!"
+    // );
+    // alert(
+    //   "В клуб недозволено проходить людишкам с грязной пастью без красных перчаток."
+    // );
+    screen2.classList.add("none");
+    screen3.classList.remove("none");
+  });
+  obratno3to2.addEventListener("click", () => {
+    screen3.classList.add("none");
+    screen2.classList.remove("none");
+  });
+  dalee3to4.addEventListener("click", () => {
+    // alert(
+    //   "вО-ВТорыХ, вХОД БеЗ ПЕРchАТоК СТРОгО ЗАПРЕщЕН!!!!!!!!!!!!!!!!!!!!!!!!!!!"
+    // );
+    screen3.classList.add("none");
+    screen4.classList.remove("none");
+  });
+  obratno4to3.addEventListener("click", () => {
+    screen4.classList.add("none");
+    screen3.classList.remove("none");
+  });
+  dalee4to5.addEventListener("click", () => {
+    screen4.classList.add("none");
+    screen5.classList.remove("none");
+  });
+  obratno5to4.addEventListener("click", () => {
+    screen5.classList.add("none");
+    screen4.classList.remove("none");
+  });
+}
 
 document.addEventListener("DOMContentLoaded", () => {
   // Находим все необходимые элементы
@@ -147,6 +156,7 @@ document.addEventListener("DOMContentLoaded", () => {
   function showFinalImage() {
     finalImage.classList.remove("hidden");
     setTimeout(() => {
+      alert("О-нNnNNNNNNNNEEет, rvotniy reflex!!!");
       finalImage.classList.add("visible");
     }, 1); // Небольшая задержка для корректного применения анимации
   }
