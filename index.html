@@ -8,10 +8,10 @@
     <!-- <script src="javascripts"></script> -->
     <script src="javascripts/javascripts.js" charset="utf-8"></script>
   </head>
-
   <body>
-    <!-- секция ПЕРВОГО ЭКРАНА!  -->
-    <div class="hz">
+    <!-- секция ПЕРВОГО ЭКРАНА -->
+
+    <section class="EKRAN1 none">
       <section class="SMENA">
         <div class="DAYONE">
           <div class="domday"></div>
@@ -31,23 +31,23 @@
           <div id="replica-container" class="replica_1_1 hidden"></div>
           <div id="replica-box" class="replica_1_2 hidden"></div>
         </section>
-        <!-- <div class="BUTTONS-CONTAINER">
-        <div class="obratno"></div>
-        <div class="dalee"></div>
-      </div> -->
+
         <div class="textures">
           <div class="texture1another"></div>
           <div class="texture2another"></div>
         </div>
+
+        <!-- Контейнер для кнопок -->
         <div class="BUTTONS-CONTAINER">
           <div class="obratno"></div>
           <div class="dalee"></div>
         </div>
       </section>
-    </div>
-    <!-- <script src="script.js"></script> -->
+    </section>
+
     <!-- секция ВТОРОГО ЭКРАНА -->
-    <section class="EKRAN2 none">
+
+    <div class="EKRAN2 none">
       <div class="BUTTONS-CONTAINER">
         <div class="obratno"></div>
         <div class="dalee"></div>
@@ -56,13 +56,57 @@
       <div class="PERSPECTIVE_DIALOG">
         <div class="frogs_container">
           <div class="frog_2"></div>
-          <div class="frog_red2"></div>
+          <div id="frogy" class="frog_red2"></div>
         </div>
       </div>
-      <div class="replica_2_1"></div>
-      <div class="replica_2_2"></div>
+      <div id="slova2_1" class="replica_2_1 hidden"></div>
+      <div id="slova2_2" class="replica_2_2 hidden"></div>
       <div class="texture2another"></div>
       <div class="texture2another"></div>
+    </div>
+
+    <!-- секция ТРЕТЬЕГО ЭКРАНА -->
+
+    <section class="EKRAN3">
+      <div class="mouth">
+        <div class="mouth_fon"></div>
+        <div id="ciga" class="cigara"></div>
+        <zubi>
+          <div class="zubi"></div>
+          <div id="left" class="zub1"></div>
+          <div id="left2" class="zub2"></div>
+          <div id="left3" class="zub3"></div>
+          <div id="left4" class="zub4"></div>
+        </zubi>
+        <div id="ura" class="final-image hidden"></div>
+        <div class="texture2another"></div>
+        <div class="texture2another"></div>
+      </div>
+      <!-- Контейнер для кнопок -->
+      <div class="BUTTONS-CONTAINER">
+        <div class="obratno"></div>
+        <div class="dalee"></div>
+      </div>
+    </section>
+
+    <!-- секция ЧЕТВЕРТОГО ЭКРАНА -->
+    <section class="EKRAN4 none">
+      <div class="room"></div>
+      <!-- Контейнер для кнопок -->
+      <div class="BUTTONS-CONTAINER">
+        <div class="obratno"></div>
+        <div class="dalee"></div>
+      </div>
+    </section>
+
+    <!-- секция ПЯТОГО ЭКРАНА -->
+    <section class="EKRAN5 none">
+      <div class="final"></div>
+      <!-- Контейнер для кнопок -->
+      <div class="BUTTONS-CONTAINER">
+        <div class="obratno"></div>
+        <div class="dalee"></div>
+      </div>
     </section>
   </body>
 </html>
