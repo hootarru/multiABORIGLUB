@@ -279,3 +279,120 @@
     transform: rotate(2deg);
   }
 }
+.visible {
+  opacity: 1;
+  transition: opacity 0.5s ease; /* Плавное появление */
+}
+.dalee:hover,
+.obratno:hover {
+  animation: hoverEffect 0.2s ease-in-out forwards;
+}
+@keyframes hoverEffect {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(1.05);
+  }
+}
+.rot {
+  animation-name: rot_dvizh;
+  animation-duration: 0.4s;
+  animation-direction: alternate-reverse;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+@keyframes rot_dvizh {
+  from {
+    transform: translateY(0vw);
+  }
+  to {
+    transform: translateY(0.3vw);
+  }
+}
+
+.clock {
+  animation-name: small_dvizh;
+  animation-duration: 2s;
+  /* animation-direction: alternate-reverse; */
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+@keyframes small_dvizh {
+  0% {
+    transform: rotate(0deg) translateX(0.3vw) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(0.3vw) rotate(-360deg);
+  }
+}
+.cover4 {
+  animation: float-animation 2s ease-in-out infinite;
+}
+@keyframes float-animation {
+  0%,
+  100% {
+    transform: translateY(0); /* Исходное положение */
+  }
+  50% {
+    transform: translateY(-0.4vw); /* Приподнятая позиция (вверх на 1vw) */
+  }
+}
+.window1 {
+  animation-name: smallwindow_dvizh;
+  animation-duration: 2s;
+  animation-direction: reverse;
+  /* animation-direction: alternate-reverse; */
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+@keyframes smallwindow_dvizh {
+  0% {
+    transform: rotate(0deg) translateX(0.2vw) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(0.2vw) rotate(-360deg);
+  }
+}
+.window2 {
+  animation-name: smallwindow2_dvizh;
+  animation-duration: 2s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+@keyframes smallwindow2_dvizh {
+  0% {
+    transform: rotate(0deg) translateX(0.1vw) rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg) translateX(0.1vw) rotate(-360deg);
+  }
+}
+.door {
+  animation-name: smalldoor_dvizh;
+  animation-duration: 1s;
+  animation-direction: alternate-reverse;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+}
+@keyframes smalldoor_dvizh {
+  0%,
+  100% {
+    transform: translateX(0vw); /* Исходное положение */
+  }
+  50% {
+    transform: translateX(0.2vw); /* Приподнятая позиция (вверх на 1vw) */
+  }
+}
+.without {
+  animation: swing-animation 2s ease-in-out infinite; /* Анимация покачивания */
+}
+@keyframes swing-animation {
+  0%,
+  100% {
+    transform: rotate(-4deg) translateX(-0.01vw);
+  }
+  50% {
+    transform: rotate(4deg) translateX(-0.01vw);
+  }
+}

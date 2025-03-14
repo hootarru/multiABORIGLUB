@@ -114,14 +114,14 @@ body {
   background-size: cover;
   mix-blend-mode: multiply;
   pointer-events: none;
-  z-index: 5;
+  z-index: 500;
 }
 .texture2another {
   background-image: url("../images/texture2.webp");
   background-size: cover;
   mix-blend-mode: color-burn;
   pointer-events: none;
-  z-index: 6;
+  z-index: 500;
   opacity: 60%;
 }
 .dialog {
@@ -346,7 +346,9 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: url("../images/gubka.cur"), auto;
 }
+
 .mouth_fon {
   position: absolute;
   background-image: url("../images/mouth.svg");
@@ -409,6 +411,7 @@ body {
   cursor: pointer;
   z-index: 4;
 }
+
 .final-image {
   position: absolute;
   background-image: url("../images/blevota.webp");
@@ -445,6 +448,193 @@ body {
   width: 100vw;
   height: 56.25vw;
 }
+.clock {
+  position: absolute;
+  background-image: url("../images/clock.webp");
+  background-size: cover;
+  width: 13vw;
+  height: 15vw;
+  margin-top: 4vw;
+  margin-left: 73vw;
+}
+.girl4-container {
+  position: relative;
+  width: 34vw;
+  height: 34vw;
+  margin-top: -7vw;
+  margin-left: 68vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 10vw;
+  left: -13vw;
+  z-index: 4;
+}
+.girl4 {
+  /* opacity: 40%; */
+  position: absolute;
+  background-image: url("../images/girl_4.webp");
+  background-size: cover;
+  width: 34.7vw;
+  height: 38vw;
+  z-index: 4;
+  /* margin-top: 20vw;
+  margin-left: -40vw; */
+}
+.girl4_th {
+  display: none;
+  /* opacity: 40%; */
+  position: absolute;
+  background-image: url("../images/girl_4th.webp");
+  background-size: cover;
+  width: 31vw;
+  height: 42vw;
+  /* top: -6vw; */
+  left: -2.5vw;
+  z-index: 3;
+}
+.frog4 {
+  position: absolute;
+  background-image: url("../images/frog4.webp");
+  background-size: cover;
+  width: 38vw;
+  height: 40.8vw;
+  top: 10vw;
+  left: 0vw;
+  z-index: 4;
+}
+.cover4 {
+  position: absolute;
+  background-image: url("../images/cover.webp");
+  background-size: cover;
+  width: 21vw;
+  height: 10vw;
+  top: 40vw;
+  left: 40vw;
+  z-index: 2;
+}
+.window1 {
+  position: absolute;
+  background-image: url("../images/window_right.webp");
+  background-size: cover;
+  width: 23vw;
+  height: 26vw;
+  top: 5vw;
+  left: 49vw;
+  z-index: 2;
+}
+.window2 {
+  position: absolute;
+  background-image: url("../images/window_left.webp");
+  background-size: cover;
+  width: 13.4vw;
+  height: 15vw;
+  top: 3vw;
+  left: 27vw;
+  z-index: 2;
+}
+.door {
+  position: absolute;
+  background-image: url("../images/door.webp");
+  background-size: cover;
+  width: 25vw;
+  height: 40vw;
+  top: 7.3vw;
+  left: 2vw;
+  z-index: 2;
+}
+.perch {
+  position: absolute;
+  background-image: url("../images/perchatki.webp");
+  background-size: cover;
+  width: 10.3vw;
+  height: 20vw;
+  top: 21.5vw;
+  left: 23vw;
+  z-index: 5;
+  cursor: grab;
+}
+
+.without {
+  position: absolute;
+  background-image: url("../images/without.webp");
+  background-size: cover;
+  width: 14vw;
+  height: 14vw;
+  top: 4vw;
+  right: 15vw;
+  z-index: 5;
+  cursor: pointer;
+}
+.perch:active {
+  cursor: grabbing;
+}
+.perch.dragging {
+  transform: scale(1.2); /* Увеличиваем размер при перетаскивании */
+  opacity: 0.8; /* Делаем полупрозрачным */
+}
+.slove4ki {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20vw;
+  width: 20vw;
+  z-index: 100;
+  top: -11vw;
+  left: -61vw;
+}
+.word1 {
+  position: absolute;
+  background-image: url("../images/1word.webp");
+  background-size: cover;
+  width: 14vw;
+  height: 10vw;
+  z-index: 100;
+  top: 4vw;
+  display: none;
+}
+.word2 {
+  position: absolute;
+  background-image: url("../images/2word.webp");
+  background-size: cover;
+  width: 12vw;
+  height: 10.3vw;
+  z-index: 100;
+  top: 4vw;
+  display: none;
+}
+.word3 {
+  position: absolute;
+  background-image: url("../images/3word.webp");
+  background-size: cover;
+  width: 12.4vw;
+  height: 8vw;
+  z-index: 100;
+  top: 5vw;
+  display: none;
+}
+.word4 {
+  position: absolute;
+  background-image: url("../images/4word.webp");
+  background-size: cover;
+  width: 12.4vw;
+  height: 9vw;
+  z-index: 100;
+  top: 4vw;
+  display: none;
+}
+
+.word5 {
+  position: absolute;
+  background-image: url("../images/5word.webp");
+  background-size: cover;
+  width: 12.4vw;
+  height: 8vw;
+  z-index: 100;
+  top: 5vw;
+  display: none;
+}
 
 .EKRAN5 {
   position: relative;
@@ -461,24 +651,26 @@ body {
   background-size: cover;
   width: 100vw;
   height: 56.25vw;
+  z-index: 2;
 }
-
+/* .final2 {
+  position: absolute;
+  background-image: url("../images/darklast.svg");
+  background-size: cover;
+  width: 100vw;
+  height: 56.25vw;
+  z-index: 3;
+} */
+.rot {
+  position: absolute;
+  background-image: url("../images/derzhi.webp");
+  background-size: cover;
+  width: 32.7vw;
+  height: 11.8vw;
+  top: -2vw;
+  left: 4vw;
+  z-index: 4;
+}
 .none {
   display: none;
-}
-.visible {
-  opacity: 1;
-  transition: opacity 0.5s ease; /* Плавное появление */
-}
-.dalee:hover,
-.obratno:hover {
-  animation: hoverEffect 0.2s ease-in-out forwards;
-}
-@keyframes hoverEffect {
-  0% {
-    transform: scale(1);
-  }
-  100% {
-    transform: scale(1.05);
-  }
 }

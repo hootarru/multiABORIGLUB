@@ -80,10 +80,18 @@ document.addEventListener("DOMContentLoaded", () => {
   const left4 = document.getElementById("left4");
   const ciga1 = document.getElementById("ciga");
 
+  const perch = document.querySelector(".perch");
+  const girl4 = document.querySelector(".girl4");
+  const girl4_th = document.querySelector(".girl4_th");
+
   // Массив элементов для удаления
   const elementsToRemove = [left1, left2, left3, left4, ciga1];
 
   const finalImage = document.getElementById("ura");
+
+  const bezElement = document.getElementById("bez");
+  // Массив классов слов
+  const words = ["word1", "word2", "word3", "word4", "word5"];
 
   // Обработчик клика на лягушку (frog-container)
   frogContainer.addEventListener("click", () => {
@@ -167,4 +175,76 @@ document.addEventListener("DOMContentLoaded", () => {
   addClickHandler(left3);
   addClickHandler(left4);
   addClickHandler(ciga1);
+  let isDragging = false;
+
+  // Событие начала перетаскивания
+  perch.addEventListener("dragstart", (event) => {
+    isDragging = true;
+    event.dataTransfer.setData("text/plain", "perch"); // Устанавливаем данные для перетаскивания
+    perch.style.cursor = "grabbing"; // Меняем курсор
+  });
+
+  // Событие окончания перетаскивания
+  perch.addEventListener("dragend", () => {
+    isDragging = false;
+    perch.classList.remove("dragging"); // Убираем класс
+    perch.style.cursor = "grab"; // Возвращаем курсор
+  });
+
+  // Событие при входе в зону girl4
+  girl4.addEventListener("dragover", (event) => {
+    event.preventDefault(); // Разрешаем перетаскивание
+    girl4.classList.add("highlight");
+  });
+  girl4.addEventListener("dragleave", () => {
+    girl4.classList.remove("highlight"); // Убираем подсветку
+  });
+  // Событие при отпускании перетаскиваемого элемента
+  girl4.addEventListener("drop", () => {
+    if (isDragging) {
+      // Заменяем girl4 на girl4_th
+      girl4.style.display = "none";
+      girl4_th.style.display = "block";
+      perch.style.display = "none";
+      girl4.classList.remove("highlight"); // Убираем подсветку
+    }
+  });
+
+  function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+  }
+  // Функция для появления и исчезновения элементов
+  function showAndHideElements() {
+    // Перемешиваем массив классов
+    shuffleArray(words);
+
+    // Итерация по перемешанному массиву
+    words.forEach((wordClass, index) => {
+      const element = document.querySelector(`.${wordClass}`);
+
+      if (element) {
+        // Показываем элемент через задержку
+        setTimeout(() => {
+          element.style.display = "block"; // Показываем элемент
+        }, index * 1000); // Задержка для каждого элемента
+
+        // Скрываем элемент через задержку
+        setTimeout(() => {
+          element.style.display = "none"; // Скрываем элемент
+        }, (index + 1) * 1000); // Задержка для скрытия
+      }
+    });
+
+    // Повторяем процесс через определённое время
+    setTimeout(showAndHideElements, words.length * 1000);
+  }
+  showAndHideElements();
+  bezElement.addEventListener("click", () => {
+    alert(
+      "p.s. KRASNЫЕ перчатки помогают людишкам скрыть человечьи отпечатки от диджитал устройств абориглаба. так аборигены не поймут, что здесь был ЧЕЛОВЕК!---------------------->[перетащи перчатки героине] "
+    );
+  });
 });
