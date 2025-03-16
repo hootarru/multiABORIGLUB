@@ -396,3 +396,158 @@
     transform: rotate(4deg) translateX(-0.01vw);
   }
 }
+.final2 {
+  animation-name: final_smena;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes final_smena {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+.dance-animation {
+  animation: dance 1s infinite ease-in-out;
+}
+
+/* Ключевые кадры для анимации "танца" */
+@keyframes dance {
+  0% {
+    transform: rotate(0deg) scale(1) scaleX(1); /* Начальное состояние */
+  }
+  25% {
+    transform: rotate(10deg) scale(1.1) scaleX(1); /* Поворот вправо и увеличение */
+  }
+  50% {
+    transform: rotate(-10deg) scale(1) scaleX(-1); /* Поворот влево, нормальный размер, отзеркаливание */
+  }
+  75% {
+    transform: rotate(-5deg) scale(1.1) scaleX(-1); /* Маленький поворот влево, увеличение, зеркало */
+  }
+  100% {
+    transform: rotate(0deg) scale(1) scaleX(1); /* Возврат в исходное состояние */
+  }
+}
+
+/* Класс для анимации инверсии */
+.animate-frog {
+  animation: moveDiagonally 1s ease-in-out infinite alternate-reverse,
+    invertCycle 0.5s alternate-reverse infinite;
+}
+
+/* Ключевые кадры для инверсии */
+@keyframes invertCycle {
+  0% {
+    filter: invert(0%);
+  }
+  100% {
+    filter: invert(110%);
+  }
+}
+/* .vot {
+  animation: moveVot;
+  animation-duration: 1s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+}
+@keyframes moveVot {
+  0% {
+    transform: translate(-50%, -50%) rotateX(0deg) rotateY(0deg)
+      translate3d(17vw, 6vw, 19vw);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotateX(20deg) rotateY(20deg)
+      translate3d(9vw, 6vw, 23vw);
+  }
+} */
+.perch:hover {
+  animation-name: perchat;
+  animation-duration: 0.6s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-direction: alternate-reverse;
+}
+@keyframes perchat {
+  from {
+    filter: none;
+  }
+  to {
+    filter: brightness(120%);
+  }
+}
+.animate-decor {
+  animation: invertCycle 0.5s alternate-reverse infinite;
+}
+.animate-cvetok {
+  animation: krug-clockwise 2s linear infinite,
+    invertCycle 0.5s alternate-reverse infinite;
+}
+
+.animate-cvetok2 {
+  animation: krug-counterclockwise 2s linear infinite,
+    invertCycle 0.5s alternate-reverse infinite;
+}
+@keyframes krug-clockwise {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes krug-counterclockwise {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+@keyframes invertCycle {
+  0% {
+    filter: invert(0%);
+  }
+  100% {
+    filter: invert(110%);
+  }
+}
+.zhem,
+.zhem2 {
+  transition: transform 0.1s ease, opacity 0.1s ease;
+}
+.pulse-animation {
+  animation: pulse 1s infinite ease-in-out;
+}
+
+/* Ключевые кадры для пульсации */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2); /* Увеличиваем масштаб */
+    opacity: 0.8; /* Уменьшаем прозрачность */
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+#opa:hover {
+  filter: brightness(1.4); /* Осветление */
+}
+
+/* Эффект при наведении на #opa2 */
+#opa2:hover {
+  filter: brightness(1.4); /* Осветление */
+}

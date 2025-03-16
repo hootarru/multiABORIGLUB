@@ -4,6 +4,7 @@
 body {
   background-color: #cf3711;
   width: 100%;
+  cursor: url("../images/cursor.cur"), auto;
 }
 .SMENA {
   position: relative;
@@ -65,6 +66,7 @@ body {
   mix-blend-mode: color-burn;
   pointer-events: none;
   z-index: 7;
+  opacity: 70%;
 }
 
 .NIGHTONE {
@@ -97,7 +99,7 @@ body {
   width: 30vw;
   height: 27.7vw;
   z-index: 1;
-  filter: saturate(105%);
+  filter: saturate(107%);
   margin-block-start: 20vw;
 }
 .texture1another,
@@ -110,19 +112,36 @@ body {
   overflow: hidden;
 }
 .texture1another {
-  background-image: url("../images/texture1.webp");
+  background-image: url("../images/texture1.svg");
   background-size: cover;
-  mix-blend-mode: multiply;
+  mix-blend-mode: overlay;
   pointer-events: none;
   z-index: 500;
+  opacity: 40%;
 }
 .texture2another {
-  background-image: url("../images/texture2.webp");
+  background-image: url("../images/texture2.svg");
   background-size: cover;
   mix-blend-mode: color-burn;
   pointer-events: none;
   z-index: 500;
-  opacity: 60%;
+  opacity: 90%;
+}
+.texture3another {
+  background-image: url("../images/texture1.svg");
+  background-size: cover;
+  mix-blend-mode: darken;
+  pointer-events: none;
+  z-index: 400;
+  opacity: 90%;
+}
+.texture_dop {
+  background-image: url("../images/texture2.svg");
+  background-size: cover;
+  mix-blend-mode: overlay;
+  pointer-events: none;
+  z-index: 3;
+  opacity: 90%;
 }
 .dialog {
   width: 50vw;
@@ -141,7 +160,7 @@ body {
   height: 29vw;
   z-index: 4;
   margin-right: 17vw;
-  cursor: progress;
+  cursor: pointer;
 }
 
 .frog1 {
@@ -346,7 +365,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  cursor: url("../images/gubka.cur"), auto;
+  cursor: url("../images/cursor.png"), auto;
 }
 
 .mouth_fon {
@@ -651,16 +670,198 @@ body {
   background-size: cover;
   width: 100vw;
   height: 56.25vw;
-  z-index: 2;
+  z-index: 3;
+  filter: saturate(120%);
 }
-/* .final2 {
+.final2 {
   position: absolute;
   background-image: url("../images/darklast.svg");
   background-size: cover;
   width: 100vw;
   height: 56.25vw;
   z-index: 3;
-} */
+  filter: saturate(120%);
+}
+.knop1 {
+  position: absolute;
+  background-image: url("../images/knopka.webp");
+  background-size: cover;
+  width: 7vw;
+  height: 4vw;
+  z-index: 12;
+  top: 46vw;
+  left: 37vw;
+  cursor: pointer;
+  transition: filter 0.3s ease;
+}
+.knop2 {
+  position: absolute;
+  background-image: url("../images/knopka2.webp");
+  background-size: cover;
+  width: 4vw;
+  height: 4.5vw;
+  z-index: 12;
+  top: 46vw;
+  left: 45vw;
+  cursor: pointer;
+  transition: filter 0.3s ease;
+}
+.frog_lasty {
+  position: absolute;
+  background-image: url("../images/frog_red2.webp");
+  background-size: cover;
+  width: 35vw;
+  height: 48vw;
+  z-index: 4;
+  margin-left: 29vw;
+  top: 30vw;
+}
+
+.vot {
+  position: absolute;
+  background-image: url("../images/vot.webp");
+  background-size: cover;
+  width: 41vw;
+  height: 10.7vw;
+  z-index: 3;
+  left: 16vw;
+  top: 30vw;
+}
+.vot.active {
+  opacity: 1;
+  transform: scale(1); /* Элемент видим и нормального размера */
+}
+
+/* Стили для элемента без класса .active */
+.vot:not(.active) {
+  opacity: 0;
+  transform: scale(0); /* Элемент исчезает и уменьшается */
+}
+.det-cont {
+  position: relative;
+  z-index: 4;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100vw; /* Занимает всю ширину экрана */
+  height: 10vw; /* Высота контейнера */
+  padding: 2vw;
+  box-sizing: border-box;
+  overflow: hidden; /* Обрезаем всё, что выходит за пределы контейнера */
+  top: -23vw;
+}
+
+/* Стили для .delalka1 и .delalka2 */
+.delalka1,
+.delalka2 {
+  width: 12.7vw; /* Ширина элементов */
+  height: 7.5vw; /* Высота элементов */
+  background-size: cover; /* Изображение заполняет элемент */
+  z-index: 6;
+}
+
+.delalka1 {
+  background-image: url("../images/DETAL1.webp"); /* Фоновое изображение для первого элемента */
+}
+
+.delalka2 {
+  background-image: url("../images/DETAL2.webp"); /* Фоновое изображение для второго элемента */
+  transform: scale(-1, 1); /* Переворачиваем второй элемент горизонтально */
+}
+.zhem {
+  position: absolute;
+  background-image: url("../images/zhem.webp");
+  background-size: cover;
+  width: 4vw;
+  height: 4vw;
+  top: 2vw;
+  left: 15.2vw;
+  z-index: 3;
+  rotate: 145deg;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+.zhem2 {
+  position: absolute;
+  background-image: url("../images/zhem.webp");
+  background-size: cover;
+  width: 4vw;
+  height: 4vw;
+  top: 2vw;
+  right: 15.2vw;
+  z-index: 3;
+  rotate: 230deg;
+  transform: scale(-1, 1);
+  transition: transform 0.5s ease, opacity 0.5s ease;
+}
+.decor1 {
+  position: absolute;
+  background-image: url("../images/decor1.webp");
+  background-size: cover;
+  width: 10vw;
+  height: 12vw;
+  top: 35.4vw;
+  right: 2vw;
+  z-index: 3;
+  transition: filter 0.5s ease;
+}
+.decor2 {
+  position: absolute;
+  background-image: url("../images/decor1.webp");
+  background-size: cover;
+  width: 10vw;
+  height: 12vw;
+  top: 35.4vw;
+  left: 1.5vw;
+  z-index: 3;
+  transform: scale(-1, 1);
+  transition: filter 0.5s ease;
+}
+.cvetok {
+  position: absolute;
+  background-image: url("../images/cvetok.webp");
+  background-size: cover;
+  width: 17vw;
+  height: 16vw;
+  top: 3vw;
+  right: 20vw;
+  z-index: 3;
+  rotate: 45deg;
+  transition: filter 0.5s ease;
+}
+.cvetok2 {
+  position: absolute;
+  background-image: url("../images/cvetok.webp");
+  background-size: cover;
+  width: 17vw;
+  height: 16vw;
+  top: 3vw;
+  left: 20vw;
+  z-index: 3;
+  rotate: 45deg;
+  transform: scale(-1, -1);
+  /* filter: invert(110); */
+  transition: filter 0.5s ease;
+}
+.deyt1 {
+  position: absolute;
+  background-image: url("../images/left_deyt.svg");
+  background-size: cover;
+  width: 7vw;
+  height: 15.3vw;
+  top: 19vw;
+  left: 0.4vw;
+  z-index: 3;
+}
+.deyt2 {
+  position: absolute;
+  background-image: url("../images/right_deyt.svg");
+  background-size: cover;
+  width: 7.6vw;
+  height: 15.7vw;
+  top: 19vw;
+  right: 1.2vw;
+  z-index: 3;
+}
 .rot {
   position: absolute;
   background-image: url("../images/derzhi.webp");
@@ -669,7 +870,11 @@ body {
   height: 11.8vw;
   top: -2vw;
   left: 4vw;
-  z-index: 4;
+  z-index: 3;
+}
+
+* {
+  box-sizing: border-box; /* Учитываем padding и border в ширине/высоте */
 }
 .none {
   display: none;

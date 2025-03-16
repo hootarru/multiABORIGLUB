@@ -1,9 +1,11 @@
-// // console.log("privet");
 document.addEventListener("DOMContentLoaded", () => {
   navigation();
 });
 
 function navigation() {
+  // Загрузка звукового файла
+  const sound = new Audio("sounds/knopsound.mp3"); // Укажите путь к вашему MP3 файлу
+
   let screen1 = document.querySelector(".EKRAN1");
   let screen2 = document.querySelector(".EKRAN2");
   let screen3 = document.querySelector(".EKRAN3");
@@ -19,49 +21,60 @@ function navigation() {
   let dalee4to5 = document.querySelector(".EKRAN4 .dalee");
   let obratno5to4 = document.querySelector(".EKRAN5 .obratno");
 
+  // Функция для воспроизведения звука
+  function playSound() {
+    sound.currentTime = 0; // Сбрасываем звук на начало
+    sound.play(); // Воспроизводим звук
+  }
+
   dalee1to2.addEventListener("click", () => {
+    playSound();
     screen1.classList.add("none");
     screen2.classList.remove("none");
   });
+
   obratno2to1.addEventListener("click", () => {
+    playSound();
     screen1.classList.remove("none");
     screen2.classList.add("none");
   });
+
   dalee2to3.addEventListener("click", () => {
-    // alert(
-    //   "вО-ПЕРВЫХ, СЛЕДИ ЗА РТОМ ПЕРЕД ПОХОДОМ В АБОРИГЛАБ !!!!!!!!!!!!!!!!!!!!!!!"
-    // );
-    // alert(
-    //   "В клуб недозволено проходить людишкам с грязной пастью без красных перчаток."
-    // );
+    playSound();
     screen2.classList.add("none");
     screen3.classList.remove("none");
   });
+
   obratno3to2.addEventListener("click", () => {
+    playSound();
     screen3.classList.add("none");
     screen2.classList.remove("none");
   });
+
   dalee3to4.addEventListener("click", () => {
-    // alert(
-    //   "вО-ВТорыХ, вХОД БеЗ ПЕРchАТоК СТРОгО ЗАПРЕщЕН!!!!!!!!!!!!!!!!!!!!!!!!!!!"
-    // );
+    playSound();
     screen3.classList.add("none");
     screen4.classList.remove("none");
   });
+
   obratno4to3.addEventListener("click", () => {
+    playSound();
     screen4.classList.add("none");
     screen3.classList.remove("none");
   });
+
   dalee4to5.addEventListener("click", () => {
+    playSound();
     screen4.classList.add("none");
     screen5.classList.remove("none");
   });
+
   obratno5to4.addEventListener("click", () => {
+    playSound();
     screen5.classList.add("none");
     screen4.classList.remove("none");
   });
 }
-
 document.addEventListener("DOMContentLoaded", () => {
   // Находим все необходимые элементы
   const frogContainer = document.getElementById("frog-container");
@@ -84,6 +97,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const girl4 = document.querySelector(".girl4");
   const girl4_th = document.querySelector(".girl4_th");
 
+  // Получаем количество строк и столбцов
+
   // Массив элементов для удаления
   const elementsToRemove = [left1, left2, left3, left4, ciga1];
 
@@ -93,6 +108,17 @@ document.addEventListener("DOMContentLoaded", () => {
   // Массив классов слов
   const words = ["word1", "word2", "word3", "word4", "word5"];
 
+  // ЦВЕТОК КРУЖИТСЯ
+  const opa = document.getElementById("opa");
+  const cvetok = document.querySelector(".cvetok");
+  const cvetok2 = document.querySelector(".cvetok2");
+  const decor1 = document.querySelector(".decor1");
+  const decor2 = document.querySelector(".decor2");
+  const frogLasty = document.querySelector(".frog_lasty");
+  const zhem = document.querySelector(".zhem");
+  const zhem2 = document.querySelector(".zhem2");
+  const vot = document.querySelector(".vot");
+  const frogDance = document.querySelector(".frog_dance");
   // Обработчик клика на лягушку (frog-container)
   frogContainer.addEventListener("click", () => {
     // Переключение видимости реплики
@@ -246,5 +272,45 @@ document.addEventListener("DOMContentLoaded", () => {
     alert(
       "p.s. KRASNЫЕ перчатки помогают людишкам скрыть человечьи отпечатки от диджитал устройств абориглаба. так аборигены не поймут, что здесь был ЧЕЛОВЕК!---------------------->[перетащи перчатки героине] "
     );
+  });
+  // opa.addEventListener("click", () => {
+  //   if (cvetok.classList.contains("animate")) {
+  //     cvetok.classList.remove("animate");
+  //     cvetok2.classList.remove("animate");
+  //   } else {
+  //     cvetok.classList.add("animate");
+  //     cvetok2.classList.add("animate");
+  //   }
+  // });
+  opa.addEventListener("click", () => {
+    // Переключаем анимации для всех элементов
+    if (cvetok.classList.contains("animate-cvetok")) {
+      // Если анимации уже запущены, останавливаем их
+      cvetok.classList.remove("animate-cvetok");
+      cvetok2.classList.remove("animate-cvetok2");
+      decor1.classList.remove("animate-decor");
+      decor2.classList.remove("animate-decor");
+      // frogLasty.classList.remove("animate-frog");
+      zhem.classList.remove("pulse-animation");
+      zhem2.classList.remove("pulse-animation");
+    } else {
+      // Если анимации не запущены, запускаем их
+      cvetok.classList.add("animate-cvetok");
+      cvetok2.classList.add("animate-cvetok2");
+      decor1.classList.add("animate-decor");
+      decor2.classList.add("animate-decor");
+      // frogLasty.classList.add("animate-frog");
+      zhem.classList.add("pulse-animation");
+      zhem2.classList.add("pulse-animation");
+    }
+    vot.classList.remove("active");
+  });
+  opa.addEventListener("click", () => {
+    // Переключаем анимацию танца
+    if (frogLasty.classList.contains("dance-animation")) {
+      frogLasty.classList.remove("dance-animation"); // Останавливаем анимацию
+    } else {
+      frogLasty.classList.add("dance-animation"); // Запускаем анимацию
+    }
   });
 });
