@@ -9,14 +9,19 @@
     <script src="javascripts/javascripts.js" charset="utf-8"></script>
   </head>
   <body>
-    <!-- секция ПЕРВОГО ЭКРАНА -->
+    <!-- ПРЕЛОАДЕР  -->
 
-    <section class="EKRAN1">
+    <div id="preloader">
+      <div class="spinner"></div>
+      <img src="images/loading.svg" alt="Loading" class="loading-image" />
+    </div>
+
+    <!-- секция ПЕРВОГО ЭКРАНА -->
+    <section class="EKRAN1 none">
       <section class="SMENA">
         <div class="DAYONE">
           <div class="domday"></div>
           <div class="sun"></div>
-
           <div class="texture1"></div>
           <div class="texture2"></div>
           <div class="texture_dop"></div>
@@ -25,7 +30,6 @@
         <div class="NIGHTONE"></div>
         <div class="domnight"></div>
         <div class="moon"></div>
-
         <section class="dialog">
           <div id="girl-box" class="girl1"></div>
           <div class="frog_red1"></div>
@@ -132,7 +136,7 @@
 
     <!-- секция ПЯТОГО ЭКРАНА -->
 
-    <section class="EKRAN5 none">
+    <section class="EKRAN5">
       <div class="final"></div>
       <div class="final2"></div>
       <div id="opa" class="knop1"></div>

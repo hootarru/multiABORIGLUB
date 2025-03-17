@@ -1,3 +1,13 @@
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+#preloader.fade-out {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
 .domnight {
   animation-name: dom_smena;
   animation-duration: 5s;
@@ -535,8 +545,8 @@
     opacity: 1;
   }
   50% {
-    transform: scale(1.2); /* Увеличиваем масштаб */
-    opacity: 0.8; /* Уменьшаем прозрачность */
+    transform: scale(1.2);
+    opacity: 0.8;
   }
   100% {
     transform: scale(1);
@@ -544,10 +554,16 @@
   }
 }
 #opa:hover {
-  filter: brightness(1.4); /* Осветление */
+  filter: brightness(1.4);
 }
 
 /* Эффект при наведении на #opa2 */
 #opa2:hover {
-  filter: brightness(1.4); /* Осветление */
+  filter: brightness(1.4);
+}
+.scaled {
+  transform: scale(2) translateY(-5vw) translateX(1vw); /* Возвращаемся к исходному размеру и поднимаем вверх */
+}
+.moved-down {
+  transform: translateY(8vw) translateX(-2vw); /* Сдвигаем вниз на 50px */
 }
