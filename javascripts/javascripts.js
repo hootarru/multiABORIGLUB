@@ -3,80 +3,55 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function navigation() {
-  // Загрузка звукового файла
-  const sound = new Audio("sounds/knopsound.mp3"); // Укажите путь к вашему MP3 файлу
+  const sound = new Audio("sounds/another2.mp3");
+  sound.volume = 0.3;
 
-  let screen1 = document.querySelector(".EKRAN1");
-  let screen2 = document.querySelector(".EKRAN2");
-  let screen3 = document.querySelector(".EKRAN3");
-  let screen4 = document.querySelector(".EKRAN4");
-  let screen5 = document.querySelector(".EKRAN5");
+  const screens = [
+    document.querySelector(".EKRAN1"),
+    document.querySelector(".EKRAN2"),
+    document.querySelector(".EKRAN3"),
+    document.querySelector(".EKRAN4"),
+    document.querySelector(".EKRAN5"),
+  ];
 
-  let dalee1to2 = document.querySelector(".EKRAN1 .dalee");
-  let obratno2to1 = document.querySelector(".EKRAN2 .obratno");
-  let dalee2to3 = document.querySelector(".EKRAN2 .dalee");
-  let obratno3to2 = document.querySelector(".EKRAN3 .obratno");
-  let dalee3to4 = document.querySelector(".EKRAN3 .dalee");
-  let obratno4to3 = document.querySelector(".EKRAN4 .obratno");
-  let dalee4to5 = document.querySelector(".EKRAN4 .dalee");
-  let obratno5to4 = document.querySelector(".EKRAN5 .obratno");
+  const buttons = {
+    dalee: [
+      document.querySelector(".EKRAN1 .dalee"),
+      document.querySelector(".EKRAN2 .dalee"),
+      document.querySelector(".EKRAN3 .dalee"),
+      document.querySelector(".EKRAN4 .dalee"),
+    ],
+    obratno: [
+      document.querySelector(".EKRAN2 .obratno"),
+      document.querySelector(".EKRAN3 .obratno"),
+      document.querySelector(".EKRAN4 .obratno"),
+      document.querySelector(".EKRAN5 .obratno"),
+    ],
+  };
 
-  // Функция для воспроизведения звука
   function playSound() {
-    sound.currentTime = 0; // Сбрасываем звук на начало
-    sound.play(); // Воспроизводим звук
+    sound.currentTime = 0;
+    sound.play();
   }
 
-  dalee1to2.addEventListener("click", () => {
-    playSound();
-    screen1.classList.add("none");
-    screen2.classList.remove("none");
+  buttons.dalee.forEach((button, index) => {
+    button.addEventListener("click", () => {
+      playSound();
+      screens[index].classList.add("none");
+      screens[index + 1].classList.remove("none");
+    });
   });
 
-  obratno2to1.addEventListener("click", () => {
-    playSound();
-    screen1.classList.remove("none");
-    screen2.classList.add("none");
-  });
-
-  dalee2to3.addEventListener("click", () => {
-    playSound();
-    screen2.classList.add("none");
-    screen3.classList.remove("none");
-  });
-
-  obratno3to2.addEventListener("click", () => {
-    playSound();
-    screen3.classList.add("none");
-    screen2.classList.remove("none");
-  });
-
-  dalee3to4.addEventListener("click", () => {
-    playSound();
-    screen3.classList.add("none");
-    screen4.classList.remove("none");
-  });
-
-  obratno4to3.addEventListener("click", () => {
-    playSound();
-    screen4.classList.add("none");
-    screen3.classList.remove("none");
-  });
-
-  dalee4to5.addEventListener("click", () => {
-    playSound();
-    screen4.classList.add("none");
-    screen5.classList.remove("none");
-  });
-
-  obratno5to4.addEventListener("click", () => {
-    playSound();
-    screen5.classList.add("none");
-    screen4.classList.remove("none");
+  buttons.obratno.forEach((button, index) => {
+    button.addEventListener("click", () => {
+      playSound();
+      screens[index + 1].classList.add("none");
+      screens[index].classList.remove("none");
+    });
   });
 }
+
 document.addEventListener("DOMContentLoaded", () => {
-  // Находим все необходимые элементы
   const frogContainer = document.getElementById("frog-container");
   const replicaContainer = document.getElementById("replica-container");
   const frogRed1 = document.querySelector(".frog_red1");
@@ -97,15 +72,14 @@ document.addEventListener("DOMContentLoaded", () => {
   const girl4 = document.querySelector(".girl4");
   const girl4_th = document.querySelector(".girl4_th");
 
-  // Получаем количество строк и столбцов
-
   // Массив элементов для удаления
   const elementsToRemove = [left1, left2, left3, left4, ciga1];
-
+  // Финальное изображение
   const finalImage = document.getElementById("ura");
 
   const bezElement = document.getElementById("bez");
   // Массив классов слов
+
   const words = ["word1", "word2", "word3", "word4", "word5"];
 
   // ЦВЕТОК КРУЖИТСЯ
@@ -118,7 +92,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const zhem = document.querySelector(".zhem");
   const zhem2 = document.querySelector(".zhem2");
   const vot = document.querySelector(".vot");
-  const frogDance = document.querySelector(".frog_dance");
+  // const frogDance = document.querySelector(".frog_dance");
+
+  // Создаем объект Audio для звука
+
   // Обработчик клика на лягушку (frog-container)
   frogContainer.addEventListener("click", () => {
     // Переключение видимости реплики
@@ -282,15 +259,36 @@ document.addEventListener("DOMContentLoaded", () => {
   //     cvetok2.classList.add("animate");
   //   }
   // });
+
+  // Создаем объект Audio для звука
+  const sound = new Audio("sounds/gamesound.mp3");
+  sound.volume = 0.3;
+
+  const backgroundMusic = new Audio("sounds/backgroundmusic.mp3");
+  backgroundMusic.volume = 0.05; // Устанавливаем громкость фоновой музыки (30%)
+  backgroundMusic.loop = true; // Включаем бесконечное повторение
+  let isBackgroundMusicPlaying = false;
   opa.addEventListener("click", () => {
     // Переключаем анимации для всех элементов
-    if (cvetok.classList.contains("animate-cvetok")) {
+    sound.currentTime = 0; // Сбрасываем время воспроизведения на начало
+    sound.play();
+    if (!isBackgroundMusicPlaying) {
+      backgroundMusic.play();
+      isBackgroundMusicPlaying = true;
+    } else {
+      // Если музыка уже играет, останавливаем её
+      backgroundMusic.pause();
+      isBackgroundMusicPlaying = false;
+    }
+
+    const isAnimated = cvetok.classList.contains("animate-cvetok");
+
+    if (isAnimated) {
       // Если анимации уже запущены, останавливаем их
       cvetok.classList.remove("animate-cvetok");
       cvetok2.classList.remove("animate-cvetok2");
       decor1.classList.remove("animate-decor");
       decor2.classList.remove("animate-decor");
-      // frogLasty.classList.remove("animate-frog");
       zhem.classList.remove("pulse-animation");
       zhem2.classList.remove("pulse-animation");
     } else {
@@ -299,18 +297,14 @@ document.addEventListener("DOMContentLoaded", () => {
       cvetok2.classList.add("animate-cvetok2");
       decor1.classList.add("animate-decor");
       decor2.classList.add("animate-decor");
-      // frogLasty.classList.add("animate-frog");
       zhem.classList.add("pulse-animation");
       zhem2.classList.add("pulse-animation");
     }
-    vot.classList.remove("active");
-  });
-  opa.addEventListener("click", () => {
+
     // Переключаем анимацию танца
-    if (frogLasty.classList.contains("dance-animation")) {
-      frogLasty.classList.remove("dance-animation"); // Останавливаем анимацию
-    } else {
-      frogLasty.classList.add("dance-animation"); // Запускаем анимацию
-    }
+    frogLasty.classList.toggle("dance-animation");
+
+    // Удаляем класс 'active' у элемента vot
+    vot.classList.remove("active");
   });
 });
