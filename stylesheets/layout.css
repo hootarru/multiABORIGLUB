@@ -12,25 +12,34 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  background: black;
+  background: #000000; /* Фон прелоадера */
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 9999;
-  flex-direction: column;
-  gap: 5vw;
+  z-index: 9999; /* Чтобы прелоадер был поверх всего */
+  flex-direction: column; /* Размещаем элементы в колонку */
+  gap: 1vw; /* Расстояние между элементами (в процентах от ширины экрана) */
 }
 .spinner {
-  border: 0.2vw solid rgb(255, 255, 255);
-  border-left-color: white;
-  border-radius: 50%;
-  width: 5px;
-  height: 5vw;
-  animation: spin 1s linear infinite;
+  width: 20vw; /* Ширина спиннера (20% от ширины экрана) */
+  height: 20vw; /* Высота спиннера (20% от ширины экрана) */
+  max-width: 150px; /* Максимальная ширина */
+  max-height: 150px; /* Максимальная высота */
+  background-image: url("../images/spinerr.svg"); /* Путь к спиннеру */
+  background-size: contain; /* Масштабируем изображение */
+  background-repeat: no-repeat; /* Отключаем повторение */
+  background-position: center; /* Центрируем изображение */
+  animation: spin 1s linear infinite; /* Анимация вращения */
 }
 .loading-image {
-  width: 12vw; /* Размер изображения */
-  height: auto; /* Сохраняем пропорции */
+  width: 30vw; /* Ширина второго изображения (30% от ширины экрана) */
+  height: 30vw; /* Высота второго изображения (30% от ширины экрана) */
+  max-width: 200px; /* Максимальная ширина */
+  max-height: 200px; /* Максимальная высота */
+  background-image: url("../images/loading.svg"); /* Путь к изображению */
+  background-size: contain; /* Масштабируем изображение */
+  background-repeat: no-repeat; /* Отключаем повторение */
+  background-position: center; /* Центрируем изображение */
 }
 
 .SMENA {
