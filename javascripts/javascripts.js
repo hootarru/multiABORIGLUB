@@ -1,15 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
   const preloader = document.getElementById("preloader");
 
-  // Показываем прелоадер при загрузке DOM
   preloader.style.display = "flex";
-
-  // Скрываем прелоадер, когда вся страница загружена
   window.addEventListener("load", function () {
     preloader.classList.add("fade-out");
     setTimeout(() => {
       preloader.style.display = "none";
-    }, 500); // Соответствует длительности анимации
+    }, 500);
   });
 });
 
@@ -44,29 +41,17 @@ function navigation() {
     ],
   };
 
-  let isAnimationInProgress = false; // Флаг для отслеживания состояния анимации
-
   function playSound() {
     sound.currentTime = 0;
     sound.play();
   }
-
   buttons.dalee.forEach((button, index) => {
     button.addEventListener("click", () => {
-      if (isAnimationInProgress) return; // Блокируем кнопку, если анимация в процессе
-
       playSound();
       screens[index].classList.add("none");
       screens[index + 1].classList.remove("none");
-      if (index === 2) {
-        isAnimationInProgress = true; // Включаем флаг анимации
-        animateElementRemoval().then(() => {
-          isAnimationInProgress = false; // Снимаем флаг после завершения
-        });
-      }
     });
   });
-
   buttons.obratno.forEach((button, index) => {
     button.addEventListener("click", () => {
       playSound();
@@ -97,8 +82,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const girl4 = document.querySelector(".girl4");
   const girl4_th = document.querySelector(".girl4_th");
 
-  // // Массив элементов для удаления
-
+  // Массив элементов для удаления
   const elementsToRemove = [left1, left2, left3, left4, ciga1];
   // Финальное изображение
   const finalImage = document.getElementById("ura");
@@ -109,6 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const words = ["word1", "word2", "word3", "word4", "word5"];
 
   // ЦВЕТОК КРУЖИТСЯ
+
   const opa = document.getElementById("opa");
   const cvetok = document.querySelector(".cvetok");
   const cvetok2 = document.querySelector(".cvetok2");
@@ -118,13 +103,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const zhem = document.querySelector(".zhem");
   const zhem2 = document.querySelector(".zhem2");
   const vot = document.querySelector(".vot");
-  // const frogDance = document.querySelector(".frog_dance");
-
-  // Создаем объект Audio для звука
 
   // Обработчик клика на лягушку (frog-container)
   frogContainer.addEventListener("click", () => {
-    // Переключение видимости реплики
     if (replicaContainer.classList.contains("hidden")) {
       replicaContainer.classList.remove("hidden");
     } else {
@@ -167,6 +148,25 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 10);
     }, 2300);
   });
+
+  // Функция для проверки, удалены ли все элементы
+  function allElementsRemoved(elements) {
+    return elements.every(
+      (element) => document.body.contains(element) === false
+    );
+  }
+
+  // Функция для показа финального изображения
+  function showFinalImage() {
+    console.log("Показываем финальное изображение");
+    finalImage.classList.remove("hidden");
+    setTimeout(() => {
+      alert("О-нNnNNNNNNNNEEет, rvotniy reflex!!!");
+      finalImage.classList.add("visible");
+    }, 1);
+  }
+
+  // Добавляем обработчики кликов
   function addClickHandler(element) {
     element.addEventListener("click", () => {
       // Создаем экземпляр аудио для воспроизведения звука
@@ -193,83 +193,106 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Проверка, удалены ли все элементы
-  function allElementsRemoved(elements) {
-    return elements.every((el) => !document.body.contains(el));
-  }
+  addClickHandler(left1);
+  addClickHandler(left2);
+  addClickHandler(left3);
+  addClickHandler(left4);
+  addClickHandler(ciga1);
 
   // Показываем финальное изображение
   function showFinalImage() {
+    console.log("Показываем финальное изображение");
     finalImage.classList.remove("hidden");
     setTimeout(() => {
       alert("О-нNnNNNNNNNNEEет, rvotniy reflex!!!");
       finalImage.classList.add("visible");
-    }, 1); // Небольшая задержка для корректного применения анимации
+    }, 1);
   }
 
-  // Функция для последовательного удаления элементов
-  function animateElementRemoval() {
-    return new Promise((resolve) => {
-      elementsToRemove.forEach((element, index) => {
-        setTimeout(() => {
-          if (element) {
-            const soundEffect = new Audio("sounds/zub.mp3");
-            soundEffect.volume = 1;
-            soundEffect.play();
+  let clone; // Глобальная переменная для клона
+  const clothess = new Audio("sounds/clothes.mp3");
+  clothess.volume = 0.25;
 
-            element.classList.add("hidden"); // Добавляем класс для анимации
+  let isDragging = false;
 
-            setTimeout(() => {
-              element.remove(); // Удаляем элемент из DOM
-
-              // Проверяем, удалены ли все элементы
-              if (allElementsRemoved(elementsToRemove)) {
-                showFinalImage();
-                resolve(); // Завершаем анимацию
-              }
-            }, 500); // Время анимации (0.5s)
-          }
-        }, index * 300); // Задержка между удалениями элементов
-      });
-    });
-  }
-
-  // Добавляем обработчики клика для каждого элемента
-  elementsToRemove.forEach((element) => {
-    if (element) {
-      addClickHandler(element);
-    }
-  });
   // Событие начала перетаскивания
   perch.addEventListener("dragstart", (event) => {
+    console.log("Drag started");
     isDragging = true;
-    event.dataTransfer.setData("text/plain", "perch"); // Устанавливаем данные для перетаскивания
-    perch.style.cursor = "grabbing"; // Меняем курсор
+    event.dataTransfer.setData("text/plain", "perch");
+
+    // Добавляем класс для изменения стиля
+    perch.classList.add("dragging");
+    perch.style.cursor = "grabbing";
+
+    // Создаем клон элемента
+    clone = perch.cloneNode(true);
+    clone.style.position = "absolute";
+    clone.style.pointerEvents = "none"; // Отключаем взаимодействие
+    clone.style.opacity = "0.7"; // Полупрозрачность
+    clone.style.zIndex = "1000"; // Размещаем поверх других элементов
+    document.body.appendChild(clone);
+
+    // Обновляем позицию клона при движении мыши
+    document.addEventListener("mousemove", moveClone);
   });
 
   // Событие окончания перетаскивания
   perch.addEventListener("dragend", () => {
+    console.log("Drag ended");
     isDragging = false;
-    perch.classList.remove("dragging"); // Убираем класс
-    perch.style.cursor = "grab"; // Возвращаем курсор
+
+    // Удаляем класс для возврата к исходному стилю
+    perch.classList.remove("dragging");
+    perch.style.cursor = "grab";
+
+    // Удаляем клон
+    if (clone) {
+      document.body.removeChild(clone);
+      clone = null;
+    }
+
+    // Убираем обработчик движения мыши
+    document.removeEventListener("mousemove", moveClone);
   });
+
+  // Функция для перемещения клона
+  function moveClone(event) {
+    if (clone) {
+      const rect = perch.getBoundingClientRect(); // Получаем размеры и позицию оригинального элемента
+      const offsetX = event.clientX - rect.left; // Смещение по X
+      const offsetY = event.clientY - rect.top; // Смещение по Y
+
+      clone.style.left = `${event.clientX - offsetX}px`;
+      clone.style.top = `${event.clientY - offsetY}px`;
+    }
+  }
 
   // Событие при входе в зону girl4
   girl4.addEventListener("dragover", (event) => {
-    event.preventDefault(); // Разрешаем перетаскивание
+    event.preventDefault(); // Предотвращаем стандартное поведение
     girl4.classList.add("highlight");
   });
+
+  // Событие при выходе из зоны girl4
   girl4.addEventListener("dragleave", () => {
-    girl4.classList.remove("highlight"); // Убираем подсветку
+    girl4.classList.remove("highlight");
   });
-  // Событие при отпускании перетаскиваемого элемента
+
+  // Событие при "бросании" элемента
   girl4.addEventListener("drop", () => {
+    console.log("Dropped on girl4");
     if (isDragging) {
       // Заменяем girl4 на girl4_th
       girl4.style.display = "none";
       girl4_th.style.display = "block";
       perch.style.display = "none";
-      girl4.classList.remove("highlight"); // Убираем подсветку
+      girl4.classList.remove("highlight");
+
+      // Воспроизводим звук
+      clothess.play().catch((error) => {
+        console.error("Ошибка воспроизведения аудио:", error);
+      });
     }
   });
 
@@ -400,36 +423,32 @@ document.addEventListener("DOMContentLoaded", () => {
   let startTop = 0;
 
   pipkaElement.addEventListener("click", () => {
+    sound.currentTime = 0;
+    sound.play();
     // Показываем элемент .us
     if (usElement.classList.contains("hidden")) {
       usElement.classList.remove("hidden");
       setTimeout(() => {
-        usElement.classList.add("visible");
-      }, 10);
-      и;
+        usElement.classList.add("visible"); // Добавляем класс для анимации
+      }, 10); // Небольшая задержка для корректного применения стилей
     }
   });
 
-  // Начало перетаскивании
+  // Начало перетаскивания
   usElement.addEventListener("mousedown", (e) => {
     isDraggingUs = true;
-    startX = e.clientX;
-    и;
-    startY = e.clientY;
-    и;
-    startLeft = parseFloat(window.getComputedStyle(usElement).left);
-    и;
-    startTop = parseFloat(window.getComputedStyle(usElement).top);
-    и;
-    usElement.style.cursor = "grabbing";
-    и;
+    startX = e.clientX; // Начальная позиция курсора по X
+    startY = e.clientY; // Начальная позиция курсора по Y
+    startLeft = parseFloat(window.getComputedStyle(usElement).left); // Текущая позиция элемента по X
+    startTop = parseFloat(window.getComputedStyle(usElement).top); // Текущая позиция элемента по Y
+    usElement.style.cursor = "grabbing"; // Меняем курсор на "захват"
   });
 
   // Движение мыши
   document.addEventListener("mousemove", (e) => {
     if (isDraggingUs) {
-      const deltaX = e.clientX - startX;
-      const deltaY = e.clientY - startY;
+      const deltaX = e.clientX - startX; // Изменение позиции курсора по X
+      const deltaY = e.clientY - startY; // Изменение позиции курсора по Y
 
       // Обновляем позицию элемента
       usElement.style.left = `${startLeft + deltaX}px`;
@@ -441,7 +460,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.addEventListener("mouseup", () => {
     if (isDraggingUs) {
       isDraggingUs = false;
-      usElement.style.cursor = "grab";
+      usElement.style.cursor = "grab"; // Возвращаем курсор на "захват"
     }
   });
 });
