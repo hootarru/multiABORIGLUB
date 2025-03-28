@@ -44,6 +44,8 @@ function navigation() {
     ],
   };
 
+  let isAnimationInProgress = false; // Флаг для отслеживания состояния анимации
+
   function playSound() {
     sound.currentTime = 0;
     sound.play();
@@ -51,9 +53,17 @@ function navigation() {
 
   buttons.dalee.forEach((button, index) => {
     button.addEventListener("click", () => {
+      if (isAnimationInProgress) return; // Блокируем кнопку, если анимация в процессе
+
       playSound();
       screens[index].classList.add("none");
       screens[index + 1].classList.remove("none");
+      if (index === 2) {
+        isAnimationInProgress = true; // Включаем флаг анимации
+        animateElementRemoval().then(() => {
+          isAnimationInProgress = false; // Снимаем флаг после завершения
+        });
+      }
     });
   });
 
@@ -87,7 +97,8 @@ document.addEventListener("DOMContentLoaded", () => {
   const girl4 = document.querySelector(".girl4");
   const girl4_th = document.querySelector(".girl4_th");
 
-  // Массив элементов для удаления
+  // // Массив элементов для удаления
+
   const elementsToRemove = [left1, left2, left3, left4, ciga1];
   // Финальное изображение
   const finalImage = document.getElementById("ura");
@@ -158,6 +169,15 @@ document.addEventListener("DOMContentLoaded", () => {
   });
   function addClickHandler(element) {
     element.addEventListener("click", () => {
+      // Создаем экземпляр аудио для воспроизведения звука
+      const sound = new Audio("sounds/zub.mp3");
+      sound.volume = 1; // Устанавливаем громкость
+
+      // Воспроизводим звук
+      sound.play().catch((error) => {
+        console.error("Ошибка воспроизведения звука:", error);
+      });
+
       // Добавляем класс "hidden" для плавного исчезновения
       element.classList.add("hidden");
 
@@ -187,14 +207,39 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 1); // Небольшая задержка для корректного применения анимации
   }
 
-  // Добавляем обработчики клика для каждого элемента
-  addClickHandler(left1);
-  addClickHandler(left2);
-  addClickHandler(left3);
-  addClickHandler(left4);
-  addClickHandler(ciga1);
-  let isDragging = false;
+  // Функция для последовательного удаления элементов
+  function animateElementRemoval() {
+    return new Promise((resolve) => {
+      elementsToRemove.forEach((element, index) => {
+        setTimeout(() => {
+          if (element) {
+            const soundEffect = new Audio("sounds/zub.mp3");
+            soundEffect.volume = 1;
+            soundEffect.play();
 
+            element.classList.add("hidden"); // Добавляем класс для анимации
+
+            setTimeout(() => {
+              element.remove(); // Удаляем элемент из DOM
+
+              // Проверяем, удалены ли все элементы
+              if (allElementsRemoved(elementsToRemove)) {
+                showFinalImage();
+                resolve(); // Завершаем анимацию
+              }
+            }, 500); // Время анимации (0.5s)
+          }
+        }, index * 300); // Задержка между удалениями элементов
+      });
+    });
+  }
+
+  // Добавляем обработчики клика для каждого элемента
+  elementsToRemove.forEach((element) => {
+    if (element) {
+      addClickHandler(element);
+    }
+  });
   // Событие начала перетаскивания
   perch.addEventListener("dragstart", (event) => {
     isDragging = true;
@@ -301,7 +346,7 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   document.getElementById("opa2").addEventListener("click", function () {
-    const clickSound = new Audio("sounds/gamesound.mp3"); // Путь к файлу звука клика
+    const clickSound = new Audio("sounds/gamesound.mp3");
     clickSound.volume = 0.4;
     clickSound.play();
 
@@ -326,5 +371,77 @@ document.addEventListener("DOMContentLoaded", () => {
     final2.classList.add("scaled");
     opa.classList.add("moved-down");
     opa2.classList.add("moved-down");
+
+    // Показываем элемент .error через 3 секунды
+    setTimeout(() => {
+      const errorElement = document.querySelector(".error");
+
+      if (errorElement) {
+        errorElement.classList.remove("hidden");
+      }
+    }, 1900);
+    setTimeout(() => {
+      const pipkaElement = document.querySelector(".pipka");
+      if (pipkaElement) {
+        pipkaElement.classList.remove("hidden");
+      }
+    }, 1900);
+  });
+
+  // ОБРАБОТЧИК КЛИКА ДЛЯ PIPKA
+  const pipkaElement = document.querySelector(".pipka");
+  const usElement = document.querySelector(".us");
+
+  // Флаг для отслеживания состояния перетаскивания
+  let isDraggingUs = false;
+  let startX = 0;
+  let startY = 0;
+  let startLeft = 0;
+  let startTop = 0;
+
+  pipkaElement.addEventListener("click", () => {
+    // Показываем элемент .us
+    if (usElement.classList.contains("hidden")) {
+      usElement.classList.remove("hidden");
+      setTimeout(() => {
+        usElement.classList.add("visible");
+      }, 10);
+      и;
+    }
+  });
+
+  // Начало перетаскивании
+  usElement.addEventListener("mousedown", (e) => {
+    isDraggingUs = true;
+    startX = e.clientX;
+    и;
+    startY = e.clientY;
+    и;
+    startLeft = parseFloat(window.getComputedStyle(usElement).left);
+    и;
+    startTop = parseFloat(window.getComputedStyle(usElement).top);
+    и;
+    usElement.style.cursor = "grabbing";
+    и;
+  });
+
+  // Движение мыши
+  document.addEventListener("mousemove", (e) => {
+    if (isDraggingUs) {
+      const deltaX = e.clientX - startX;
+      const deltaY = e.clientY - startY;
+
+      // Обновляем позицию элемента
+      usElement.style.left = `${startLeft + deltaX}px`;
+      usElement.style.top = `${startTop + deltaY}px`;
+    }
+  });
+
+  // Окончание перетаскивания
+  document.addEventListener("mouseup", () => {
+    if (isDraggingUs) {
+      isDraggingUs = false;
+      usElement.style.cursor = "grab";
+    }
   });
 });
