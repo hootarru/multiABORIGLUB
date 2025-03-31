@@ -1,0 +1,388 @@
+/* @media (max-width: 1365px) {
+} */
+/* @media (min-width: 1280px) and (max-width: 1365px) {
+} */
+@media (max-width: 767px) {
+  .SMENA,
+  .DAYONE,
+  .NIGHTONE,
+  .domnight,
+  .girl1,
+  .frog1,
+  .frog_red1_smena,
+  .replica_1_2,
+  .dalee {
+    position: absolute;
+  }
+
+  .SMENA,
+  .DAYONE,
+  .NIGHTONE,
+  .domnight {
+    width: 100vw;
+    height: 133.33vw;
+  }
+
+  .DAYONE {
+    background-image: url("../images/perd_adapt.svg");
+    background-size: cover;
+  }
+
+  .NIGHTONE,
+  .domnight {
+    background-image: url("../images/vtord_adapt.svg");
+  }
+
+  .domday,
+  .sun,
+  .moon,
+  .NIGHTONE,
+  .frog_red1 {
+    display: none;
+  }
+
+  .dialog {
+    width: 70vw;
+    height: 40vw;
+    margin-block-end: -15vw;
+  }
+
+  .girl1,
+  .frog1 {
+    background-size: cover;
+    z-index: 4;
+  }
+
+  .girl1 {
+    background-image: url("../images/girl_1.webp");
+    width: 27vw;
+    height: 70vw;
+    margin-right: 22vw;
+    margin-top: -5vw;
+  }
+
+  .frog1 {
+    background-image: url("../images/frog_usual1.webp");
+    width: 39vw;
+    height: 65vw;
+    left: 24vw;
+    margin-top: 2vw;
+  }
+
+  .frog_red1_smena {
+    width: 54vw;
+    height: 76vw;
+    z-index: 3;
+    left: 14vw;
+    margin-top: 2vw;
+  }
+
+  .replica_1_1 {
+    width: 80.85vw;
+    height: 45.57vw;
+    margin-left: 25vw;
+    top: -26vw;
+    animation: REPLIC1_OPACITY_ONLY 1s ease-in-out;
+  }
+
+  .replica_1_2 {
+    background-image: url("../images/replica_1_2.webp");
+    background-size: cover;
+    top: -10vw;
+    margin-left: -47vw;
+    width: 51.416vw;
+    height: 25.157vw;
+    rotate: 10deg;
+  }
+
+  .dalee {
+    width: 21vw;
+    height: 13vw;
+    z-index: 200;
+    left: 75vw;
+    margin-top: 50vw;
+    cursor: pointer;
+  }
+  .obratno {
+    position: absolute;
+    width: 25vw;
+    height: 13vw;
+    background-image: url("../images/obratno_button.webp");
+    background-size: cover;
+    left: 3vw;
+    z-index: 200;
+    margin-top: 49.5vw;
+    cursor: pointer;
+  }
+
+  /* екран 2  */
+
+  .EKRAN2 {
+    width: 100vw;
+    height: 133.33vw;
+  }
+  .PERSPECTIVE_DIALOG {
+    background-image: url("../images/tret_adapt.svg");
+    width: 100vw;
+    height: 133.33vw;
+  }
+  .frogs_container {
+    width: 100vw;
+    height: 133.33vw;
+    overflow: visible;
+
+    top: 5vw;
+  }
+  .frog_2 {
+    display: none;
+  }
+  .frog_red2 {
+    width: 100vw;
+    height: 75vw;
+    left: -48.6vw;
+    margin-top: 49.8vw;
+  }
+  .plakat {
+    display: none;
+  }
+  .replica_2_1 {
+    position: absolute;
+
+    background-size: cover;
+    width: 93vw;
+    height: 51vw;
+    top: 10vw;
+    margin-left: 10vw;
+  }
+  .replica_2_2 {
+    position: absolute;
+
+    background-size: cover;
+    width: 72vw;
+    height: 21vw;
+    margin-left: 59vw;
+    top: 95vw;
+  }
+
+  .EKRAN3 {
+    width: 100vw;
+    height: 133.33vw;
+  }
+  .mouth_fon {
+    position: absolute;
+    background-image: url("../images/chet_adapt.svg");
+    background-size: cover;
+    width: 100vw;
+    height: 133.33vw;
+  }
+  .mouth {
+    overflow: visible;
+  }
+  .rot {
+    width: 55vw;
+    height: 20vw;
+    top: -40vw;
+    left: 12vw;
+  }
+  .zub1,
+  .zub2,
+  .zub3,
+  .zub4 {
+    display: none;
+  }
+  .cigara {
+    display: none;
+  }
+  .ciga2,
+  .ciga3,
+  .ciga4,
+  .ciga5 {
+    display: block;
+  }
+  .final-image {
+    width: 29.5vw;
+    height: 16vw;
+    margin-left: -2vw;
+    margin-top: 24vw;
+  }
+  .EKRAN4 {
+    width: 100vw;
+    height: 133.33vw;
+  }
+  .room {
+    background-image: url("../images/pyat_adapt.svg");
+    width: 100vw;
+    height: 133.33vw;
+  }
+  .clock {
+    display: none;
+  }
+  .door {
+    display: none;
+  }
+  .without {
+    display: none;
+  }
+  .girl4 {
+    rotate: 6deg;
+    width: 64vw;
+    height: 70vw;
+    margin-top: 20vw;
+    left: -6vw;
+  }
+  .girl4_th {
+    width: 54vw;
+    height: 72vw;
+    margin-top: 20vw;
+    left: 1vw;
+    z-index: 3;
+  }
+  .frog4 {
+    /* rotate: 5deg; */
+    width: 65vw;
+    height: 70vw;
+    top: 29vw;
+    left: -10vw;
+  }
+  .perch {
+    width: 18vw;
+    height: 35vw;
+    top: 50vw;
+    left: 30vw;
+  }
+  .word1 {
+    width: 20vw;
+    height: 14.5vw;
+    z-index: 100;
+    left: 7vw;
+    top: -15vw;
+  }
+  .word2 {
+    width: 20vw;
+    height: 17vw;
+    z-index: 100;
+    left: 7vw;
+    top: -15vw;
+  }
+  .word3 {
+    width: 23vw;
+    height: 15vw;
+    z-index: 100;
+    left: 7vw;
+    top: -15vw;
+  }
+  .word4 {
+    width: 20vw;
+    height: 14.5vw;
+    z-index: 100;
+    left: 7vw;
+    top: -15vw;
+    display: none;
+  }
+
+  .word5 {
+    width: 19vw;
+    height: 13vw;
+    z-index: 100;
+    left: 8vw;
+    top: -15vw;
+  }
+  .cover4 {
+    width: 42vw;
+    height: 20vw;
+    top: 95vw;
+    left: 31vw;
+    z-index: 2;
+  }
+  .window1 {
+    width: 40vw;
+    height: 45vw;
+    top: 17vw;
+    left: 55vw;
+    z-index: 2;
+  }
+  .window2 {
+    position: absolute;
+    background-image: url("../images/window_left.webp");
+    background-size: cover;
+    width: 30vw;
+    height: 30vw;
+    top: 10vw;
+    left: 13vw;
+    z-index: 2;
+  }
+  .EKRAN5 {
+    position: relative;
+    width: 100vw;
+    height: 133.33vw;
+    overflow: hidden;
+  }
+  .final {
+    position: absolute;
+    background-image: url("../images/shes.svg");
+    background-size: cover;
+    width: 100vw;
+    height: 133.33vw;
+  }
+  .final2 {
+    display: none;
+  }
+
+  .final2,
+  .delalka1,
+  .delalka2,
+  .zhem,
+  .zhem2,
+  .decor1,
+  .decor2,
+  .cvetok,
+  .cvetok2 {
+    display: none;
+  }
+  .knop1 {
+    width: 17vw;
+    height: 10vw;
+    top: 106vw;
+    left: 20vw;
+    z-index: 5;
+  }
+  .knop2 {
+    width: 12vw;
+    height: 13vw;
+    top: 106vw;
+    left: 38vw;
+    z-index: 5;
+  }
+
+  .hidden-mobile {
+    display: none !important;
+  }
+  .frog_lasty {
+    width: 55vw;
+    height: 80vw;
+    margin-left: 45vw;
+    top: 80vw;
+    z-index: 6;
+  }
+  .vot {
+    width: 61vw;
+    height: 16vw;
+    left: 5vw;
+    top: 76vw;
+  }
+  .pipka {
+    width: 14vw;
+    height: 11.5vw;
+    top: 80vw;
+    left: 80vw;
+    z-index: 3;
+    cursor: pointer;
+    transition: opacity 0.5s ease-in-out;
+  }
+  .error {
+    width: 41vw;
+    height: 27vw;
+    top: 80vw;
+    left: 20vw;
+  }
+}

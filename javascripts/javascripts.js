@@ -1,16 +1,15 @@
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener("DOMContentLoaded", () => {
   const preloader = document.getElementById("preloader");
 
-  preloader.style.display = "flex";
-  window.addEventListener("load", function () {
-    preloader.classList.add("fade-out");
-    setTimeout(() => {
-      preloader.style.display = "none";
-    }, 500);
-  });
-});
-
-document.addEventListener("DOMContentLoaded", () => {
+  if (preloader) {
+    preloader.style.display = "flex";
+    window.addEventListener("load", () => {
+      preloader.classList.add("fade-out");
+      setTimeout(() => {
+        preloader.style.display = "none";
+      }, 500);
+    });
+  }
   navigation();
 });
 
@@ -40,61 +39,57 @@ function navigation() {
       document.querySelector(".EKRAN5 .obratno"),
     ],
   };
-
   function playSound() {
     sound.currentTime = 0;
     sound.play();
   }
+
   buttons.dalee.forEach((button, index) => {
-    button.addEventListener("click", () => {
-      playSound();
-      screens[index].classList.add("none");
-      screens[index + 1].classList.remove("none");
-    });
+    if (button && screens[index] && screens[index + 1]) {
+      button.addEventListener("click", () => {
+        playSound();
+        screens[index].classList.add("none");
+        screens[index + 1].classList.remove("none");
+      });
+    }
   });
+
   buttons.obratno.forEach((button, index) => {
-    button.addEventListener("click", () => {
-      playSound();
-      screens[index + 1].classList.add("none");
-      screens[index].classList.remove("none");
-    });
+    if (button && screens[index + 1] && screens[index]) {
+      button.addEventListener("click", () => {
+        playSound();
+        screens[index + 1].classList.add("none");
+        screens[index].classList.remove("none");
+      });
+    }
   });
 }
 
 document.addEventListener("DOMContentLoaded", () => {
+  // контейнеры
   const frogContainer = document.getElementById("frog-container");
   const replicaContainer = document.getElementById("replica-container");
+
+  // лягушки + девчонка
   const frogRed1 = document.querySelector(".frog_red1");
   const frog3 = document.getElementById("frog3");
   const girlElement = document.getElementById("girl-box");
-  const replicaElement = document.getElementById("replica-box");
   const frogyElement = document.getElementById("frogy");
+
+  // реплики
+  const replicaElement = document.getElementById("replica-box");
   const mindElement = document.getElementById("slova2_1");
   const wordElement = document.getElementById("slova2_2");
 
-  const left1 = document.getElementById("left");
-  const left2 = document.getElementById("left2");
-  const left3 = document.getElementById("left3");
-  const left4 = document.getElementById("left4");
-  const ciga1 = document.getElementById("ciga");
-
+  // анимация с перчатками
   const perch = document.querySelector(".perch");
   const girl4 = document.querySelector(".girl4");
   const girl4_th = document.querySelector(".girl4_th");
 
-  // Массив элементов для удаления
-  const elementsToRemove = [left1, left2, left3, left4, ciga1];
-  // Финальное изображение
-  const finalImage = document.getElementById("ura");
-
+  // ДОП ЭЛЕМЕНТЫ = АЛЕРТ
   const bezElement = document.getElementById("bez");
-  // Массив классов слов
 
-  const words = ["word1", "word2", "word3", "word4", "word5"];
-
-  // ЦВЕТОК КРУЖИТСЯ
-
-  const opa = document.getElementById("opa");
+  // ДЕТАЛИ ПОСЛЕДНЕГО ЭКРАНА
   const cvetok = document.querySelector(".cvetok");
   const cvetok2 = document.querySelector(".cvetok2");
   const decor1 = document.querySelector(".decor1");
@@ -104,7 +99,10 @@ document.addEventListener("DOMContentLoaded", () => {
   const zhem2 = document.querySelector(".zhem2");
   const vot = document.querySelector(".vot");
 
-  // Обработчик клика на лягушку (frog-container)
+  // слова для циклического показа
+  const words = ["word1", "word2", "word3", "word4", "word5"];
+
+  // обработчик клика на лягушку (FROG-CONTAINER : появление реплики)!!!
   frogContainer.addEventListener("click", () => {
     if (replicaContainer.classList.contains("hidden")) {
       replicaContainer.classList.remove("hidden");
@@ -112,21 +110,21 @@ document.addEventListener("DOMContentLoaded", () => {
       replicaContainer.classList.add("hidden");
     }
 
-    // Анимация исчезновения первой лягушки
+    // анимация исчезновения ПЕРВОЙ ЛЯГУШКИ!!!
     frogRed1.style.opacity = "0";
     setTimeout(() => {
       frogContainer.classList.add("hidden");
       frogRed1.classList.add("hidden");
     }, 400);
 
-    // Показ лягушки с сигаретой
+    // показ ЛЯГУШКА С СИГАРЕТОЙ!!!
     setTimeout(() => {
       frog3.classList.remove("hidden");
       frog3.style.opacity = "1";
     }, 500);
   });
 
-  // Обработчик клика на девочку (girl-box)
+  // обработчик клика на девочку (GIRL-BOX)!!!
   girlElement.addEventListener("click", () => {
     if (replicaElement.classList.contains("hidden")) {
       replicaElement.classList.remove("hidden");
@@ -135,7 +133,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }, 10);
     }
   });
-
+  // обработчик клика на лягушку (EKRAN2 : реплика с паузой)!!!
   frogyElement.addEventListener("click", () => {
     mindElement.classList.toggle("hidden");
     setTimeout(() => {
@@ -149,153 +147,169 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 2300);
   });
 
-  // Функция для проверки, удалены ли все элементы
+  // получение элементов : ЗУБЫ & СИГАРЕТА!!!
+  const left1 = document.getElementById("left");
+  const left2 = document.getElementById("left2");
+  const left3 = document.getElementById("left3");
+  const left4 = document.getElementById("left4");
+  const ciga1 = document.getElementById("ciga");
+  const ciga2 = document.getElementById("ciga2");
+  const ciga3 = document.getElementById("ciga3");
+  const ciga4 = document.getElementById("ciga4");
+  const ciga5 = document.getElementById("ciga5");
+  const finalImage = document.getElementById("ura");
+
+  // массив элементов для удаления : ЗУБЫ & СИГАРЕТА
+  const elementsToRemove = [left1, left2, left3, left4, ciga1];
+
+  // массив элементов для удаления : ЗУБЫ & СИГАРЕТА = мобилка
+  const elementsToRemoveMobile = [ciga2, ciga3, ciga4, ciga5];
+
+  // анимация зубы и сигара
   function allElementsRemoved(elements) {
-    return elements.every(
-      (element) => document.body.contains(element) === false
-    );
+    return elements.every((element) => !document.body.contains(element));
   }
+  function playSound(soundPath, volume = 1) {
+    const sound = new Audio(soundPath);
+    sound.volume = volume;
 
-  // Функция для показа финального изображения
-  function showFinalImage() {
-    console.log("Показываем финальное изображение");
-    finalImage.classList.remove("hidden");
-    setTimeout(() => {
-      alert("О-нNnNNNNNNNNEEет, rvotniy reflex!!!");
-      finalImage.classList.add("visible");
-    }, 1);
-  }
-
-  // Добавляем обработчики кликов
-  function addClickHandler(element) {
-    element.addEventListener("click", () => {
-      // Создаем экземпляр аудио для воспроизведения звука
-      const sound = new Audio("sounds/zub.mp3");
-      sound.volume = 1; // Устанавливаем громкость
-
-      // Воспроизводим звук
-      sound.play().catch((error) => {
-        console.error("Ошибка воспроизведения звука:", error);
-      });
-
-      // Добавляем класс "hidden" для плавного исчезновения
-      element.classList.add("hidden");
-
-      // Удаляем элемент из DOM после завершения анимации
-      setTimeout(() => {
-        element.remove();
-
-        // Проверяем, остались ли ещё элементы
-        if (allElementsRemoved(elementsToRemove)) {
-          showFinalImage();
-        }
-      }, 500); // Время соответствует длительности анимации (0.5s)
+    sound.play().catch((error) => {
+      console.error("ошибка воспроизведения звука:", error);
     });
   }
 
-  addClickHandler(left1);
-  addClickHandler(left2);
-  addClickHandler(left3);
-  addClickHandler(left4);
-  addClickHandler(ciga1);
+  function addClickHandler(element, elementsToRemove, finalCallback) {
+    if (!element) {
+      console.warn("элемент не найден.");
+      return;
+    }
 
-  // Показываем финальное изображение
+    // обработ. клика - зубы
+    element.addEventListener("click", () => {
+      playSound("sounds/zub.mp3");
+      element.classList.add("hidden");
+      setTimeout(() => {
+        element.remove();
+        if (allElementsRemoved(elementsToRemove)) {
+          finalCallback();
+        }
+      }, 500);
+    });
+  }
+
+  // --> показ "блевоты"
   function showFinalImage() {
-    console.log("Показываем финальное изображение");
+    if (!finalImage) {
+      console.error(
+        "финальное изображение не найдено (ошибка рвотного рефлекса)!"
+      );
+      return;
+    }
+
+    console.log("показ финального изображения");
     finalImage.classList.remove("hidden");
+
     setTimeout(() => {
       alert("О-нNnNNNNNNNNEEет, rvotniy reflex!!!");
       finalImage.classList.add("visible");
     }, 1);
   }
 
-  let clone; // Глобальная переменная для клона
+  if (window.matchMedia("(min-width: 768px)").matches) {
+    // для десктопа
+    elementsToRemove.forEach((element) => {
+      if (element) {
+        addClickHandler(element, elementsToRemove, showFinalImage);
+      }
+    });
+  } else {
+    // для малого экрана (айпад)
+    elementsToRemoveMobile.forEach((element) => {
+      if (element) {
+        addClickHandler(element, elementsToRemoveMobile, showFinalImage);
+      }
+    });
+  }
   const clothess = new Audio("sounds/clothes.mp3");
   clothess.volume = 0.25;
-
+  // клон перчаток
+  let clone;
   let isDragging = false;
 
-  // Событие начала перетаскивания
-  perch.addEventListener("dragstart", (event) => {
-    console.log("Drag started");
-    isDragging = true;
-    event.dataTransfer.setData("text/plain", "perch");
-
-    // Добавляем класс для изменения стиля
-    perch.classList.add("dragging");
-    perch.style.cursor = "grabbing";
-
-    // Создаем клон элемента
-    clone = perch.cloneNode(true);
-    clone.style.position = "absolute";
-    clone.style.pointerEvents = "none"; // Отключаем взаимодействие
-    clone.style.opacity = "0.7"; // Полупрозрачность
-    clone.style.zIndex = "1000"; // Размещаем поверх других элементов
-    document.body.appendChild(clone);
-
-    // Обновляем позицию клона при движении мыши
-    document.addEventListener("mousemove", moveClone);
-  });
-
-  // Событие окончания перетаскивания
-  perch.addEventListener("dragend", () => {
-    console.log("Drag ended");
-    isDragging = false;
-
-    // Удаляем класс для возврата к исходному стилю
-    perch.classList.remove("dragging");
-    perch.style.cursor = "grab";
-
-    // Удаляем клон
-    if (clone) {
-      document.body.removeChild(clone);
-      clone = null;
-    }
-
-    // Убираем обработчик движения мыши
-    document.removeEventListener("mousemove", moveClone);
-  });
-
-  // Функция для перемещения клона
+  // перемещение клонированных перчаток
   function moveClone(event) {
     if (clone) {
-      const rect = perch.getBoundingClientRect(); // Получаем размеры и позицию оригинального элемента
-      const offsetX = event.clientX - rect.left; // Смещение по X
-      const offsetY = event.clientY - rect.top; // Смещение по Y
+      const rect = perch.getBoundingClientRect();
+      const offsetX = event.clientX - rect.left;
+      const offsetY = event.clientY - rect.top;
 
       clone.style.left = `${event.clientX - offsetX}px`;
       clone.style.top = `${event.clientY - offsetY}px`;
     }
   }
 
-  // Событие при входе в зону girl4
+  // перетаскивание перчаток
+  perch.addEventListener("dragstart", (event) => {
+    console.log("перетаскивание перчаток : начало");
+    isDragging = true;
+    event.dataTransfer.setData("text/plain", "perch");
+
+    perch.classList.add("dragging");
+    perch.style.cursor = "grabbing";
+
+    // клонирование --> "перчатки к девочонке"
+    clone = perch.cloneNode(true);
+    clone.style.position = "absolute";
+    clone.style.pointerEvents = "none";
+    clone.style.opacity = "0.7";
+    clone.style.zIndex = "1000";
+    document.body.appendChild(clone);
+
+    document.addEventListener("mousemove", moveClone);
+  });
+
+  //  завершение перетаскивания
+  perch.addEventListener("dragend", () => {
+    console.log("Drag перетаскивание перчаток : окончание");
+    isDragging = false;
+
+    perch.classList.remove("dragging");
+    perch.style.cursor = "grab";
+
+    if (clone) {
+      document.body.removeChild(clone);
+      clone = null;
+    }
+
+    document.removeEventListener("mousemove", moveClone);
+  });
+
+  // --> (girl4)
   girl4.addEventListener("dragover", (event) => {
-    event.preventDefault(); // Предотвращаем стандартное поведение
+    event.preventDefault();
     girl4.classList.add("highlight");
   });
 
-  // Событие при выходе из зоны girl4
   girl4.addEventListener("dragleave", () => {
     girl4.classList.remove("highlight");
   });
 
-  // Событие при "бросании" элемента
   girl4.addEventListener("drop", () => {
-    console.log("Dropped on girl4");
+    console.log("перетаскивание перчаток : перчатки у девчонки");
     if (isDragging) {
-      // Заменяем girl4 на girl4_th
+      //  girl4 --> girl4_th
       girl4.style.display = "none";
       girl4_th.style.display = "block";
       perch.style.display = "none";
       girl4.classList.remove("highlight");
 
-      // Воспроизводим звук
       clothess.play().catch((error) => {
-        console.error("Ошибка воспроизведения аудио:", error);
+        console.error("ошибка воспроизведения аудио:", error);
       });
     }
   });
 
+  // перемешивание массива : рандомные слова жабы
   function shuffleArray(array) {
     for (let i = array.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -303,6 +317,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
+  // показ и скрытик элементов : рандомные слова жабы
   function showAndHideElements() {
     shuffleArray(words);
 
@@ -323,12 +338,13 @@ document.addEventListener("DOMContentLoaded", () => {
     setTimeout(showAndHideElements, words.length * 1000);
   }
   showAndHideElements();
+
+  // "обработчик клика для bezElement"
   bezElement.addEventListener("click", () => {
     alert(
-      "p.s. KRASNЫЕ перчатки помогают людишкам скрыть человечьи отпечатки от диджитал устройств абориглаба. так аборигены не поймут, что здесь был ЧЕЛОВЕК!---------------------->[перетащи перчатки героине] "
+      "p.s. KRASNЫЕ перчатки помогают людишкам скрыть человечьи отпечатки от диджитал устройств абориглаба. так аборигены не поймут, что здесь был ЧЕЛОВЕК!---------------------->[перетащи перчатки героине]"
     );
   });
-
   const sound = new Audio("sounds/another4.mp3");
   sound.volume = 0.15;
 
@@ -336,9 +352,14 @@ document.addEventListener("DOMContentLoaded", () => {
   backgroundMusic.volume = 0.2;
   backgroundMusic.loop = true;
   let isBackgroundMusicPlaying = false;
+
+  // ОБРАБОТЧИК КЛИКА ДЛЯ OPA =кнопка1
+  const opa = document.getElementById("opa");
   opa.addEventListener("click", () => {
     sound.currentTime = 0;
     sound.play();
+
+    // абориг. музыка
     if (!isBackgroundMusicPlaying) {
       backgroundMusic.play();
       isBackgroundMusicPlaying = true;
@@ -346,6 +367,7 @@ document.addEventListener("DOMContentLoaded", () => {
       backgroundMusic.pause();
       isBackgroundMusicPlaying = false;
     }
+    // "дискотека"
     const isAnimated = cvetok.classList.contains("animate-cvetok");
     if (isAnimated) {
       cvetok.classList.remove("animate-cvetok");
@@ -367,6 +389,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     vot.classList.remove("active");
   });
+
+  // ОБРАБОТЧИК КЛИКА ДЛЯ OPA2 =кнопка2
 
   document.getElementById("opa2").addEventListener("click", function () {
     const clickSound = new Audio("sounds/gamesound.mp3");
@@ -390,19 +414,27 @@ document.addEventListener("DOMContentLoaded", () => {
       detCont.remove();
     }
 
-    final.classList.add("scaled");
-    final2.classList.add("scaled");
-    opa.classList.add("moved-down");
-    opa2.classList.add("moved-down");
+    const isMobile = window.matchMedia("(max-width: 767px)").matches;
 
-    // Показываем элемент .error через 3 секунды
+    if (isMobile) {
+      opa.classList.add("hidden-mobile");
+      opa2.classList.add("hidden-mobile");
+      final.classList.add("scaled");
+      final2.classList.add("scaled");
+    } else {
+      final.classList.add("scaled");
+      final2.classList.add("scaled");
+      opa.classList.add("moved-down");
+      opa2.classList.add("moved-down");
+    }
+
     setTimeout(() => {
       const errorElement = document.querySelector(".error");
-
       if (errorElement) {
         errorElement.classList.remove("hidden");
       }
     }, 1900);
+
     setTimeout(() => {
       const pipkaElement = document.querySelector(".pipka");
       if (pipkaElement) {
@@ -411,11 +443,9 @@ document.addEventListener("DOMContentLoaded", () => {
     }, 1900);
   });
 
-  // ОБРАБОТЧИК КЛИКА ДЛЯ PIPKA
+  // ОБРАБОТЧИК КЛИКА ДЛЯ PIPKA ==кнопка3
   const pipkaElement = document.querySelector(".pipka");
   const usElement = document.querySelector(".us");
-
-  // Флаг для отслеживания состояния перетаскивания
   let isDraggingUs = false;
   let startX = 0;
   let startY = 0;
@@ -423,44 +453,45 @@ document.addEventListener("DOMContentLoaded", () => {
   let startTop = 0;
 
   pipkaElement.addEventListener("click", () => {
+    const sound = new Audio("sounds/another4.mp3");
+    sound.volume = 0.3;
+
     sound.currentTime = 0;
     sound.play();
-    // Показываем элемент .us
+
+    // -> показ: кураторы .us
     if (usElement.classList.contains("hidden")) {
       usElement.classList.remove("hidden");
       setTimeout(() => {
-        usElement.classList.add("visible"); // Добавляем класс для анимации
-      }, 10); // Небольшая задержка для корректного применения стилей
+        usElement.classList.add("visible");
+      }, 10);
     }
   });
 
-  // Начало перетаскивания
+  // ОБРАБОТЧИК ДЛЯ ПЕРЕТАСКИВАНИЯ ЭЛЕМЕНТА .us
   usElement.addEventListener("mousedown", (e) => {
     isDraggingUs = true;
-    startX = e.clientX; // Начальная позиция курсора по X
-    startY = e.clientY; // Начальная позиция курсора по Y
-    startLeft = parseFloat(window.getComputedStyle(usElement).left); // Текущая позиция элемента по X
-    startTop = parseFloat(window.getComputedStyle(usElement).top); // Текущая позиция элемента по Y
-    usElement.style.cursor = "grabbing"; // Меняем курсор на "захват"
+    startX = e.clientX;
+    startY = e.clientY;
+    startLeft = parseFloat(window.getComputedStyle(usElement).left);
+    startTop = parseFloat(window.getComputedStyle(usElement).top);
+    usElement.style.cursor = "grabbing";
   });
 
-  // Движение мыши
   document.addEventListener("mousemove", (e) => {
     if (isDraggingUs) {
-      const deltaX = e.clientX - startX; // Изменение позиции курсора по X
-      const deltaY = e.clientY - startY; // Изменение позиции курсора по Y
+      const deltaX = e.clientX - startX;
+      const deltaY = e.clientY - startY;
 
-      // Обновляем позицию элемента
       usElement.style.left = `${startLeft + deltaX}px`;
       usElement.style.top = `${startTop + deltaY}px`;
     }
   });
 
-  // Окончание перетаскивания
   document.addEventListener("mouseup", () => {
     if (isDraggingUs) {
       isDraggingUs = false;
-      usElement.style.cursor = "grab"; // Возвращаем курсор на "захват"
+      usElement.style.cursor = "grab";
     }
   });
 });

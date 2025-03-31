@@ -229,6 +229,14 @@
     margin-left: 15.4vw;
   }
 }
+@keyframes REPLIC1_OPACITY_ONLY {
+  from {
+    opacity: 0%;
+  }
+  to {
+    opacity: 100%;
+  }
+}
 .replica_1_2 {
   animation-name: REPLIC2;
   animation-timing-function: ease-in-out;
