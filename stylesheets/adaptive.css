@@ -386,3 +386,361 @@
     left: 20vw;
   }
 }
+@media (max-width: 414px) {
+  .DAYONE {
+    background-image: url("../images/mob_1.svg");
+    background-size: cover;
+  }
+  .SMENA,
+  .DAYONE,
+  .NIGHTONE,
+  .domnight {
+    width: 100vw;
+    height: 217vw;
+  }
+  .domday,
+  .sun,
+  .moon,
+  .NIGHTONE,
+  .frog_red1 {
+    display: none;
+  }
+  .NIGHTONE,
+  .domnight {
+    background-image: url("../images/mob_3.svg");
+  }
+  .dialog {
+    width: 70vw;
+    height: 40vw;
+    margin-block-end: -15vw;
+  }
+
+  .girl1,
+  .frog1 {
+    background-size: cover;
+    z-index: 4;
+  }
+
+  .girl1 {
+    background-image: url("../images/girl_1.webp");
+    width: 52vw;
+    height: 140vw;
+    margin-right: 45vw;
+    margin-top: -30vw;
+  }
+
+  .frog1 {
+    background-image: url("../images/frog_usual1.webp");
+    width: 71vw;
+    height: 120vw;
+    left: 15vw;
+    margin-top: 2vw;
+  }
+  .frog_red1_smena {
+    width: 79vw;
+    height: 130vw;
+    left: 5vw;
+    margin-top: 2vw;
+  }
+  .replica_1_1 {
+    width: 68vw;
+    height: 40vw;
+    margin-left: 40vw;
+    top: -17vw;
+    animation: REPLIC1_OPACITY_ONLY 1s ease-in-out;
+  }
+
+  .replica_1_2 {
+    top: -28vw;
+    margin-left: -47vw;
+    width: 51.416vw;
+    height: 25.157vw;
+    rotate: 10deg;
+  }
+  .dalee {
+    width: 30vw;
+    height: 18vw;
+    z-index: 200;
+    left: 68vw;
+    margin-top: 88vw;
+    cursor: pointer;
+  }
+  .obratno {
+    position: absolute;
+    width: 35vw;
+    height: 18vw;
+    background-image: url("../images/obratno_button.webp");
+    background-size: cover;
+    left: 3vw;
+    z-index: 200;
+    margin-top: 87vw;
+    cursor: pointer;
+  }
+  .EKRAN2 {
+    width: 100vw;
+    height: 217vw;
+  }
+  .PERSPECTIVE_DIALOG {
+    background-image: url("../images/mob_4.svg");
+    width: 100vw;
+    height: 217vw;
+  }
+  .frogs_container {
+    width: 100vw;
+    height: 217vw;
+    overflow: visible;
+
+    top: 5vw;
+  }
+  .frog_2 {
+    display: none;
+  }
+  .frog_red2 {
+    width: 165vw;
+    height: 115vw;
+    left: -91vw;
+    margin-top: 84vw;
+  }
+  .plakat {
+    display: none;
+  }
+  .replica_2_1 {
+    position: absolute;
+
+    background-size: cover;
+    width: 110vw;
+    height: 60vw;
+    top: 40vw;
+    margin-left: 10vw;
+  }
+  .replica_2_2 {
+    position: absolute;
+
+    background-size: cover;
+    width: 90vw;
+    height: 28vw;
+    margin-left: 40vw;
+    top: 170vw;
+  }
+  .EKRAN3 {
+    width: 100vw;
+    height: 217vw;
+  }
+  .mouth_fon {
+    position: absolute;
+    background-image: url("../images/mob_6.svg");
+    background-size: cover;
+
+    width: 100vw;
+    height: 217vw;
+  }
+  .mouth {
+    overflow: visible;
+  }
+  .rot {
+    width: 60vw;
+    height: 22vw;
+    top: -84vw;
+    left: 12vw;
+  }
+  .zub1,
+  .zub2,
+  .zub3,
+  .zub4 {
+    display: none;
+  }
+  .cigara {
+    display: none;
+  }
+  .ciga2,
+  .ciga3,
+  .ciga4,
+  .ciga5 {
+    display: block;
+  }
+  .final-image {
+    width: 33vw;
+    height: 18vw;
+    margin-left: -2vw;
+    margin-top: 29vw;
+  }
+  .EKRAN4 {
+    width: 100vw;
+    height: 217vw;
+  }
+  .room {
+    background-image: url("../images/mob_7.svg");
+    width: 100vw;
+    height: 217vw;
+  }
+  .clock {
+    display: none;
+  }
+  .door {
+    display: none;
+  }
+  .without {
+    display: none;
+  }
+  .girl4 {
+    rotate: 6deg;
+    width: 80vw;
+    height: 100vw;
+    margin-top: 20vw;
+    left: -10vw;
+  }
+  .girl4_th {
+    width: 80vw;
+    height: 100vw;
+    margin-top: 20vw;
+    left: 1vw;
+    z-index: 3;
+  }
+  .frog4 {
+    /* rotate: 5deg; */
+    width: 83vw;
+    height: 90vw;
+    top: 60vw;
+    left: -20vw;
+  }
+  .perch {
+    width: 24.3vw;
+    height: 47.3vw;
+    top: 86vw;
+    left: 30vw;
+  }
+  .cover4 {
+    width: 64vw;
+    height: 30vw;
+    top: 140vw;
+    left: 15vw;
+    z-index: 2;
+  }
+  .window1 {
+    width: 46vw;
+    height: 52vw;
+    top: 40vw;
+    left: 52vw;
+    z-index: 2;
+  }
+  .window2 {
+    position: absolute;
+    background-image: url("../images/window_left.webp");
+    background-size: cover;
+    width: 30vw;
+    height: 30vw;
+    top: 20vw;
+    left: 6vw;
+    z-index: 2;
+  }
+  .word1 {
+    width: 20vw;
+    height: 14.5vw;
+    z-index: 100;
+    left: 7vw;
+    top: -20vw;
+  }
+  .word2 {
+    width: 20vw;
+    height: 17vw;
+    z-index: 100;
+    left: 13vw;
+    top: -20vw;
+  }
+  .word3 {
+    width: 23vw;
+    height: 15vw;
+    z-index: 100;
+    left: 13vw;
+    top: -20vw;
+  }
+  .word4 {
+    width: 20vw;
+    height: 14.5vw;
+    z-index: 100;
+    left: 13vw;
+    top: -20vw;
+    display: none;
+  }
+  .word5 {
+    width: 19vw;
+    height: 13vw;
+    z-index: 100;
+    left: 15vw;
+    top: -20vw;
+  }
+  .EKRAN5 {
+    position: relative;
+    width: 100vw;
+    height: 217vw;
+    overflow: hidden;
+  }
+  .final {
+    position: absolute;
+    background-image: url("../images/mob_8.svg");
+    background-size: cover;
+    width: 100vw;
+    height: 217vw;
+  }
+  .final2 {
+    display: none;
+  }
+
+  .final2,
+  .delalka1,
+  .delalka2,
+  .zhem,
+  .zhem2,
+  .decor1,
+  .decor2,
+  .cvetok,
+  .cvetok2 {
+    display: none;
+  }
+  .knop1 {
+    width: 25vw;
+    height: 14vw;
+    top: 178vw;
+    left: 7vw;
+    z-index: 5;
+  }
+  .knop2 {
+    width: 16vw;
+    height: 18vw;
+    top: 174vw;
+    left: 38vw;
+    z-index: 5;
+  }
+
+  .hidden-mobile {
+    display: none !important;
+  }
+  .frog_lasty {
+    width: 80vw;
+    height: 110vw;
+    margin-left: 70vw;
+    top: 130vw;
+    z-index: 6;
+  }
+  .vot {
+    width: 80vw;
+    height: 21vw;
+    left: 5vw;
+    top: 120vw;
+  }
+  .pipka {
+    width: 14vw;
+    height: 11.5vw;
+    top: 100vw;
+    left: 80vw;
+    z-index: 3;
+    cursor: pointer;
+    transition: opacity 0.5s ease-in-out;
+  }
+  .error {
+    width: 60vw;
+    height: 38vw;
+    top: 150vw;
+    left: 20vw;
+  }
+}
